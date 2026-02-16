@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ordered List</title>
+</head>
+
+<body>
+    <!-- Ordered List -->
+    <ol>
+        <li>
+            Java
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            Python
+        </li>
+        <li>
+            C++
+        </li>
+    </ol>
+
+
+    <hr>
+
+    <!-- Ordered List -->
+    <ol type="A">
+        <li>
+            Java
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            Python
+        </li>
+        <li>
+            C++
+        </li>
+    </ol>
+    <hr>
+    <!-- Ordered List -->
+    <ol type="a">
+        <li>
+            Java
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            Python
+        </li>
+        <li>
+            C++
+        </li>
+    </ol>
+    <hr>
+    <!-- Ordered List -->
+    <ol type="I">
+        <li>
+            Java
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            Python
+        </li>
+        <li>
+            C++
+        </li>
+    </ol>
+    <hr>
+
+    <!-- Unordered List -->
+
+    <ul>
+        <li>
+            Java
+        </li>
+        <li>
+            SQL
+        </li>
+        <li>
+            Python
+        </li>
+        <li>
+            C++
+        </li>
+    </ul>
+
+    <hr>
+
+    <ul>
+        <li>
+            HTML
+        </li>
+        <li>
+            Css
+        </li>
+        <li>
+            JavaScript
+        </li>
+        <li>
+            Bootstrap
+        </li>
+    </ul>
+
+    <hr>
+
+
+    <!-- Description List -->
+
+    <dl>
+
+        <dt>Java</dt>
+
+        <dd>
+            Java is a object oriented programming Language
+        </dd>
+
+        <dt>SQL</dt>
+
+        <dd>
+            SQL stands for structured query Language
+        </dd>
+
+        <dt>
+            HTML
+        </dt>
+
+        <dd>
+            HTML stands for Hypertext markup language
+        </dd>
+
+    </dl>
+
+
+    <!-- IFRAME -->
+    <!-- 
+    <iframe src="https://www.flipkart.com/" height="400px" width="100%"></iframe>
+
+    <hr>
+
+    <iframe src="https://www.adobe.com/" height="600px" width="60%"></iframe>
+ -->
+
+    <!-- Form -->
+
+    <hr>
+
+
+    <form>
+
+
+        <label>Name</label>
+        <input type="text" required id="Name"><br> <br>
+        
+        <label>Email</label>
+        <input type="text" required id="Email"><br> <br>
+        <label>Phone</label>
+        <input type="text" required id="Phone"><br> <br>
+
+        <input type="submit">
+    </form>
+
+    <hr>
+
+
+    <!-- Checkbox in form -->
+    <form >
+
+        <label>_Skill's_</label><br><br>
+
+
+        <input type="checkbox" required id="JAVA">
+        <label for="JAVA">Java</label><br><br>
+
+
+        <input type="checkbox" required id="SQL">
+        <label for="SQL">SQL</label><br><br>
+
+
+
+        <input type="checkbox" required id="HTML">
+        <label for="HTML">HTML</label><br><br>
+
+
+
+        <input type="checkbox" required id="CSS">
+        <label for="CSS">CSS</label><br><br>
+
+
+
+        <input type="checkbox" required id="JAVASCRIPT">
+        <label for="JAVASCRIPT">JAVASCRIPT</label><br><br>
+
+
+        <input type="submit">
+
+    </form>
+
+
+<hr>
+
+<!-- Radio buttons in form -->
+
+
+<form action="gender">
+
+<label>GENDER'S</label><br><br>
+
+<input type="radio" required id="MALE" name="gender">
+<label for="MALE"> Male </label><br><br>
+
+
+
+<input type="radio" required id="FEMALE" name="gender">
+<label for="FEMALE"> Female </label><br><br>
+
+
+
+<input type="radio" required id="Others" name="gender">
+<label for="Others"> Others </label><br><br>
+
+
+<input type="submit">
+
+</form>
+
+<HR>
+<!-- Creating the Data List in form -->
+
+ 
+
+<caption>Student_Detalis</caption><br> <br>
+
+<label>Year Of Graduation</label>
+
+
+<input list="YOG">
+<input list="MYage">
+<input list="ABC">
+
+<datalist id="YOG">
+
+<option>2020</option>
+
+<option>2021</option>
+
+<option>2022</option>
+
+<option>2023</option>
+
+<option>2024</option>
+
+<option>2025</option>
+
+<option>2026</option>
+
+
+
+</datalist>
+
+
+<datalist id="MYage">
+
+<option>1</option>
+
+<option>2</option>
+
+<option>3</option>
+
+<option>4</option>
+
+<option>5</option>
+
+<option>6</option>
+
+<option>7</option>
+
+<option>8</option>
+
+<option>9</option>
+
+<option>10</option>
+
+<option>11</option>
+
+<option>12</option>
+
+
+</datalist>
+
+
+
+<datalist id="ABC">
+
+<option>SU</option>
+
+<option>MO</option>
+
+<option>TU</option>
+
+<option>WH</option>
+
+<option>TH</option>
+
+<option>FR</option>
+
+<option>SA</option>
+
+
+
+</datalist><BR><BR><BR>
+
+
+<input type="submit">
+
+</body>
+
+</html>

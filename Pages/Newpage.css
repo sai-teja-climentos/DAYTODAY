@@ -1,0 +1,41 @@
+.ProForm{
+    background-color: rgb(48, 46, 46);
+    color: aliceblue;
+    width: 22%;
+    padding: 10px;
+    border-radius: 10PX;
+    /* text-align: center; */
+    /* padding-left: 10%; */
+    font-size: 23px;
+}
+.DIS_IMG{
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.ProForm_Input{
+
+    width: 60%;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+
+}
+.ProForm_button{
+    width:100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(235 123 60);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    cursor: pointer;
+}
+.ProForm_button:hover{
+
+    background-color: rgb(235, 136, 79);
+
+}

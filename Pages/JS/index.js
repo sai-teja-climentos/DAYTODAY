@@ -9,20 +9,27 @@ function SignupForm() {
    if (signupUsername && signupPassword) {
 
 
-      sessionStorage.setItem("SignupUsername", signupUsername);
-
-      sessionStorage.setItem("SignupPassword", signupPassword);
-
-      window.location.href = "index_log_in.htm";
-
-   }
-   else {
-
-      alert("Plz fill the the input's")
-
-   }
+       StorageUsername = localStorage.getItem("SignupUsername");
+       StoragePassword = localStorage.getItem("SignupPassword");
 
 
+       if(StorageUsername==signupUsername && StoragePassword==StoragePassword){
+       
+          alert("Plz try to log_in")
+          window.location.href="index_log_in.htm";
+
+       }else{
+         localStorage.setItem("SignupUsername", signupUsername);
+         localStorage.setItem("SignupPassword", signupPassword);
+         
+         alert("You'r Acc was add..! plz try to log_in.")
+
+          window.location.href="index_log_in.htm";
+
+
+       }
+    }
+   
 }
 
 function LoginForm() {
@@ -33,37 +40,20 @@ function LoginForm() {
    Password = document.getElementById("Password").value;
 
 
-   StorageUsername = sessionStorage.getItem("SignupUsername");
-   StoragePassword = sessionStorage.getItem("SignupPassword");
+   StorageUsername = localStorage.getItem("SignupUsername");
+   StoragePassword = localStorage.getItem("SignupPassword");
 
 
    if (Username == StorageUsername && Password == StoragePassword) {
 
-      window.location.href = "demo.htm";
+    alert("Next")
 
    } else {
-      window.location.href = "erorr.htm";
+
+      alert("Erorr")
+
    }
 
-
-
-   //  sessionStorage.setItem("Username",Username);
-   //  sessionStorage.setItem("Password",Password);
-
-   //  alert("Date Saved!");
-
-   //  if(JS_Username==Username && JS_Password==Password){
-
-   //  //    alert("welcome to the new loning page..!")
-
-   //     window.location.href = "demo.htm";
-
-   //  }else{
-   //      //  alert("SORRY THE PAGE WAS NOT FOR YOU...! ERORR")
-   //     window.location.href = "erorr.htm";
-
-
-   //  }
 
 }
 

@@ -46,7 +46,8 @@ function LoginForm() {
 
    if (Username == StorageUsername && Password == StoragePassword) {
 
-    alert("Next")
+      window.location.href="Uplode.htm"
+
 
    } else {
 
@@ -56,5 +57,72 @@ function LoginForm() {
 
 
 }
+
+
+function UplodeForm(event){
+
+ event.preventDefault();
+
+
+// const imageInput = document.getElementById("image_up").files[0];
+
+full_name = document.getElementById("FullName").value;
+
+emailaddress = document.getElementById("EmailAddress").value;
+
+phonenumber = document.getElementById("PhoneNumber").value;
+
+
+// addEventListener("change", function(){
+
+
+//    const file = imageInput.files[0]   //geting files valus
+
+//    const reader = new FileReader();
+
+//    reader.onload = function(e){
+
+//       const imgDate = e.target.result
+
+//       //Storageing the in  localStorage;
+
+//       localStorage.setItem("Profile_image",imgDate)
+
+//    };
+
+//    if(file){
+//       reader.readAsDataURL(file);
+//    }
+
+// });
+
+// window.onload =function(){
+
+//    const savedImage = this.localStorage.getItem("Profile_image");
+
+//    if(savedImage){
+
+//      document.getElementById("preview").src = savedImage;
+
+//    }
+
+// };
+
+
+
+
+
+// alert(imgDate);
+
+localStorage.setItem("FullName",full_name);
+
+localStorage.setItem("EmailAddress",emailaddress);
+
+localStorage.setItem("PhoneNumber",phonenumber);
+
+
+
+}
+
 
 

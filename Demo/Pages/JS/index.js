@@ -9,27 +9,27 @@ function SignupForm() {
    if (signupUsername && signupPassword) {
 
 
-       StorageUsername = localStorage.getItem("SignupUsername");
-       StoragePassword = localStorage.getItem("SignupPassword");
+      StorageUsername = localStorage.getItem("SignupUsername");
+      StoragePassword = localStorage.getItem("SignupPassword");
 
 
-       if(StorageUsername==signupUsername && StoragePassword==StoragePassword){
-       
-          alert("Plz try to log_in")
-          window.location.href="index_log_in.htm";
+      if (StorageUsername == signupUsername && StoragePassword == StoragePassword) {
 
-       }else{
+         alert("Plz try to log_in")
+         window.location.href = "index_log_in.htm";
+
+      } else {
          localStorage.setItem("SignupUsername", signupUsername);
          localStorage.setItem("SignupPassword", signupPassword);
-         
+
          alert("You'r Acc was add..! plz try to log_in.")
 
-          window.location.href="index_log_in.htm";
+         window.location.href = "index_log_in.htm";
 
 
-       }
-    }
-   
+      }
+   }
+
 }
 
 function LoginForm() {
@@ -46,7 +46,7 @@ function LoginForm() {
 
    if (Username == StorageUsername && Password == StoragePassword) {
 
-      window.location.href="Uplode.htm"
+      window.location.href = "Uplode.htm"
 
 
    } else {
@@ -58,47 +58,76 @@ function LoginForm() {
 
 }
 
-// function UplodeForm(){
+function UplodeForm() {
 
-// full_name = document.getElementById("FullName").value;
+   const InputImage = document.getElementById("Img_Input");
 
-// emailaddress = document.getElementById("EmailAddress").value;
+   full_name = document.getElementById("FullName").value;
 
-// phonenumber = document.getElementById("PhoneNumber").value;
+   emailaddress = document.getElementById("EmailAddress").value;
 
-
-// localStorage.setItem("FullName",full_name);
-
-// localStorage.setItem("EmailAddress",emailaddress);
-
-// localStorage.setItem("PhoneNumber",phonenumber);
+   phonenumber = document.getElementById("PhoneNumber").value;
 
 
-// }
-
-
-function  displayForm(){
-   
-// let full_name = "0000000000000";
-
-event.preventDefault();
-
-var full_name = document.getElementById("FullName").value;
-
-
-// localStorage.setItem("FullName",full_name);
-
-// localStorage.setItem("EmailAddress",emailaddress);
-
-// localStorage.setItem("PhoneNumber",phonenumber);
-
-alert(full_name)
-
-
-// document.getElementById("FullNameDS_").innerText = full_name;
    
    
-   // full_name = FullNameDS_;
+   InputImage.addEventListener("change" , function(){
+      
+      const file = InputImage.file[0];
+      
+      alert("hi798798798")
+   if(!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(e){
+  
+   const base64Image = e.target.result;
+
+   
+
+  };
+
+  reader.readAsDataURL(file);
+
+
+  });
+
+
+   localStorage.setItem("FullName", full_name);
+
+   localStorage.setItem("EmailAddress", emailaddress);
+
+   localStorage.setItem("PhoneNumber", phonenumber);
+
 
 }
+
+
+function displayForm() {
+
+   event.preventDefault();
+
+
+
+   localStorageFullName = localStorage.getItem("FullName");
+
+   localStorageEmailAddress = localStorage.getItem("EmailAddress");
+
+   localStoragePhoneNumber = localStorage.getItem("PhoneNumber");
+
+   localStorageSignupUsername = localStorage.getItem("SignupUsername");
+
+
+   document.getElementById("FullNameDS_").textContent = localStorageFullName || "Full Name Not Found..!";
+   document.getElementById("UserNameDS_").textContent = localStorageSignupUsername || "UserName Not Found..!";
+   document.getElementById("EmailAddressDS_").textContent = localStorageEmailAddress || "Email Address Not Found..!";
+   document.getElementById("PhoneNumberDS_").textContent = localStoragePhoneNumber || "Phone Number Not Found..!";
+
+
+}
+
+
+
+
 

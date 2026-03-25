@@ -32,33 +32,6 @@ body{
     margin-bottom:25px;
     color:#333;
 }
-
-.input-group{
-    margin-bottom:18px;
-}
-
-.input-group label{
-    font-size:14px;
-    font-weight:bold;
-    display:block;
-    margin-bottom:6px;
-}
-
-.input-group input{
-    width:100%;
-    padding:10px;
-    border-radius:6px;
-    border:1px solid #ccc;
-    font-size:14px;
-    transition:0.3s;
-}
-
-.input-group input:focus{
-    border-color:#667eea;
-    outline:none;
-    box-shadow:0 0 5px rgba(102,126,234,0.5);
-}
-
 .image-upload{
     text-align:center;
     margin-bottom:20px;
@@ -93,25 +66,30 @@ button:hover{
 
 <h2>User Profile</h2>
 
-<form onsubmit="displayForm(event)">
+<form onsubmit="displayForm()">
     
 <div class="input-group">
 <label>Full Name</label>
-<input id="FullName" type="text" placeholder="Enter your name" >
 <p id="FullNameDS_" ></p>
 </div>
-<!-- 
+
+<div class="input-group">
+<label>UserName</label>
+<p id="UserNameDS_" ></p>
+</div>
+
+
 <div class="input-group">
 <label>Email Address</label>
-<input id="EmailAddress" type="email" placeholder="Enter your email" required>
+<p id="EmailAddressDS_"></p>
 </div>
 
 <div class="input-group">
 <label>Phone Number</label>
-<input id="PhoneNumber" type="tel" placeholder="Enter phone number" required>
-</div> -->
+<p id="PhoneNumberDS_"></p>
+</div>
 
-<button type="submit">Submit</button>
+<button type="submit">View User</button>
 
 </form>
 

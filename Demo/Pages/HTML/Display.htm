@@ -1,99 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profile Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
 
-<script src="/Pages/JS/index.js"></script>
+    <script src="/Pages/JS/DisplayForm.js"></script>
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-.container{
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    width:350px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
+        .container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
 
-.container h2{
-    text-align:center;
-    margin-bottom:25px;
-    color:#333;
-}
-.image-upload{
-    text-align:center;
-    margin-bottom:20px;
-}
+        .image-upload {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.image-upload input{
-    border:none;
-}
+        .image-upload input {
+            border: none;
+        }
 
-button{
-    width:100%;
-    padding:12px;
-    background:#667eea;
-    border:none;
-    color:white;
-    font-size:16px;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-button:hover{
-    background:#5a67d8;
-}
-
-</style>
+        button:hover {
+            background: #5a67d8;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h2>User Profile</h2>
+        <h2>User Profile</h2>
 
-<form onsubmit="displayForm()">
-    
-<div class="input-group">
-<label>Full Name</label>
-<p id="FullNameDS_" ></p>
-</div>
+        <form onsubmit="displayForm()">
 
-<div class="input-group">
-<label>UserName</label>
-<p id="UserNameDS_" ></p>
-</div>
+            <div class="input-group">
+            <label>Input Img</label>
+           <img id="InputImgDS_" width="150">
+            </div>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <p id="FullNameDS_"></p>
+            </div>
+
+            <div class="input-group">
+                <label>UserName</label>
+                <p id="UserNameDS_"></p>
+            </div>
 
 
-<div class="input-group">
-<label>Email Address</label>
-<p id="EmailAddressDS_"></p>
-</div>
+            <div class="input-group">
+                <label>Email Address</label>
+                <p id="EmailAddressDS_"></p>
+            </div>
 
-<div class="input-group">
-<label>Phone Number</label>
-<p id="PhoneNumberDS_"></p>
-</div>
+            <div class="input-group">
+                <label>Phone Number</label>
+                <p id="PhoneNumberDS_"></p>
+            </div>
 
-<button type="submit">View User</button>
+            <button type="submit">View User</button>
 
-</form>
+        </form>
 
-</div>
+    </div>
 
 </body>
+
 </html>

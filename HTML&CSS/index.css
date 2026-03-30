@@ -1,0 +1,35 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* 
+.Container_columm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.item {
+    padding: 20px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    /* background-color: black; */
+    /* max-width: 100px; */
+
+/* } */ 
+
+.Container_Row {
+    display: flex;
+    flex-direction: row;
+    /* text-align: center; */
+
+}
+.item {
+    padding: 20px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    /* background-color: black; */
+    /* max-width: 100px; */
+}

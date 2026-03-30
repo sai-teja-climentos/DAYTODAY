@@ -22,6 +22,9 @@ function UplodeForm() {
 
       const base64Image = e.target.result;
 
+    UserData = JSON.parse(localStorage.getItem("UserData")) || [];
+
+
       localStorage.setItem("IMG_DATA", base64Image)
 
       // alert("GOing"+base64Image+"GOing")
@@ -31,15 +34,15 @@ function UplodeForm() {
    // alert("GOing2")
 
 
-   reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
 
+   UserData = {
+      FullName : full_name ,
+      Emailaddress : emailaddress ,
+      PhoneNumber : phonenumber
 
-   localStorage.setItem("FullName", full_name);
+   }
 
-   localStorage.setItem("EmailAddress", emailaddress);
-
-   localStorage.setItem("PhoneNumber", phonenumber);
-
-   // alert("GOing3")
+   localStorage.setItem("UserData",JSON.stringify(UserData))
 
 }

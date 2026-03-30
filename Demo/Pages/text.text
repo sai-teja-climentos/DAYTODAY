@@ -1,48 +1,187 @@
-----------------------CRUD-----------------------
 
+Functions (Reusable Logic)
 
-C -> Create ➜ Insert new data
-
-R -> Read ➜ Retrieve data
-
-U -> Update ➜ Modify existing data
-
-D -> Delete ➜ Remove data
+function greet() {
+  console.log("Hello");
+}
+greet();
 
 
 
 
-pan
-atm
-18+
-bank
-name
-email
-phone
+
+////////////////////////////////////////???
 
 
-UPI PIN
+Events (User Actions)
+
+button.addEventListener("click", () => {
+  alert("Clicked!");
+});
 
 
-12345
 
 
-a,c = 100 -> 12345 -> 100 -> b
 
-b 100 -> 67890 -> 50 -> a
+Keyword 
 
-a 50 -> 54321 ->  25 -> b
+let user = {
+  name: "Sai",
+  greet() {
+    console.log(this.name);
+  }
+};
+
+user.greet();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Call, Apply, Bind
+
+function greet() {
+  console.log(this.name);
+}
+
+let user = { name: "Sai" };
+
+greet.call(user);
+
+
+
+
+
+
+What is an Array?
+
+let numbers = [1, 2, 3, 4];
+let names = ["Sai", "Ram", "John"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Accessing Values
+
+let names = ["Sai", "Ram", "John"];
+
+console.log(names[0]); // Sai
+console.log(names[1]); // Ram
+
+
+
+
+
+
+
+Important Array Methods (MUST KNOW)
+
+1. map() → Transform data
+
+let nums = [1, 2, 3];
+
+let doubled = nums.map(n => n * 2);
+// [2, 4, 6]
+
+
+
+
+
+
+
+
+ Arrays with Objects (REAL USE)
+
  
+let users = [
+  { name: "Sai", age: 22 },
+  { name: "Ram", age: 25 }
+];
 
-
-
-
-
-
-
-
-
-
-
-
-
+users.forEach(user => {
+  console.log(user.name);
+});

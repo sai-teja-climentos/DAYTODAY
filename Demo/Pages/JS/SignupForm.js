@@ -5,11 +5,13 @@ function SignupForm() {
    signupUsername = document.getElementById("SignupUsername").value;
    signupPassword = document.getElementById("SignupPassword").value;
 
+    
 
    if (signupUsername && signupPassword) {
 
 
-      UserData = JSON.parse(localStorage.getItem("UserData"))
+      UserData = JSON.parse(localStorage.getItem("UserData")) || [];
+
 
       if (UserData.SignupUsername == signupUsername && UserData.SignupPassword == signupPassword) {
 

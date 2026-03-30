@@ -1,8 +1,22 @@
-UserData = {
-
-    Fullname : "Flex BOX" , Email : "flexbox@flexbox.com" , Phone:"1234567890",  Username:"FlexCSS"
-
-
+function BUTTON_FUNCTION (){
+    // window.location.href='index.html'
+    alert("Button Clicked")
 }
 
-console.log(UserData)
+user={
+
+    name: "SUNNY",
+    phone :1234567890,
+    email:"sunny@example.com",
+
+    greet (){
+            return this.name+ this.phone + this.email
+    }
+}
+
+
+
+
+
+
+

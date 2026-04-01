@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="icon" type="image/png" href="/IMG/NewLogo.svg"> 
   <link rel="stylesheet" href="/CSS/index.css">
 </head>
 
 <body>
 
   <nav class="navbar">
-    <a class="IMG_" href="index.htm" target="_blank"><img src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113"
-        height="48"></a>
+    <img class="IMG_" onclick="showAlert()" src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113"
+        height="48">
     <ul class="nav-links">
       <li><a href="#">About Us</a></li>
       <li><a href="#">Rapido Ads</a></li>
@@ -28,7 +29,17 @@
       <input class="TitleNameInput" placeholder="Bharat Moves On Rapido!"><br>
     </div>
 
-    <button class="Titlebutton">Book Ride</button>
+    <button class="Titlebutton" onclick="showAlert()">Book Ride</button>
+
+    <script>
+
+   function showAlert(){
+
+   alert("Welcome to Bharat Moves On Rapido!")
+
+   }
+
+    </script>
 
   </div>
 
@@ -124,13 +135,10 @@
    
 
     <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/X.svg">
-      <p class="icontag">Bike</p>
     </div>
     <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/y.svg">
-      <p class="icontag">Auto</p>
     </div>
     <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/I.svg">
-      <p class="icontag">Auto</p>
     </div>
 
 

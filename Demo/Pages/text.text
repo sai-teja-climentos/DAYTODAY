@@ -7,9 +7,6 @@ function greet() {
 greet();
 
 
-
-
-
 ////////////////////////////////////////???
 
 
@@ -18,6 +15,15 @@ Events (User Actions)
 button.addEventListener("click", () => {
   alert("Clicked!");
 });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,32 +95,48 @@ greet.call(user);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 What is an Array?
 
-let numbers = [1, 2, 3, 4];
-let names = ["Sai", "Ram", "John"];
+let numbers = [1, 2, 3, 4];  ??
+let names = ["Sai", "Ram", "John"];  !!
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+00000000000000 million
 
 
 

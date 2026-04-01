@@ -1,19 +1,24 @@
-function BUTTON_FUNCTION (){
+function BUTTON_FUNCTION() {
     // window.location.href='index.html'
     alert("Button Clicked")
 }
 
-user={
+user = {
 
     name: "SUNNY",
-    phone :1234567890,
-    email:"sunny@example.com",
+    phone: 1234567890,
+    email: "sunny@example.com",
 
-    greet (){
-            return this.name+ this.phone + this.email
+    greet() {
+        return this.name + this.phone + this.email
     }
+
+    // sessionStorage.setitem
+
+    // localStorage.setitem
 }
 
+localStorage.setItem("user_key",JSON.stringify(user))
 
 
 

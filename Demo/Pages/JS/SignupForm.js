@@ -25,7 +25,7 @@ function SignupForm() {
          }
          localStorage.setItem("UserData", JSON.stringify(UserData))
 
-         alert("You'r Acc was add..! plz try to log_in.")
+         alert("You'r Acc was add..!" + "<br>" + " plz try to log_in.")
 
          window.location.href = "index_log_in.htm";
 

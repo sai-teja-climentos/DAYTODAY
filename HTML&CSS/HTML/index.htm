@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="icon" type="image/png" href="/IMG/NewLogo.svg"> 
+  <link rel="icon" type="image/png" href="/IMG/NewLogo.svg">
   <link rel="stylesheet" href="/CSS/index.css">
 </head>
 
 <body>
 
   <nav class="navbar">
-    <img class="IMG_" onclick="showAlert()" src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113"
-        height="48">
+    <img class="IMG_" onclick="showAlert()" src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113" height="48">
     <ul class="nav-links">
       <li><a href="#">About Us</a></li>
       <li><a href="#">Rapido Ads</a></li>
@@ -22,22 +21,98 @@
       <li><a href="#">Contact Us</a></li>
     </ul>
   </nav>
+
+
+
+
+
   <div class="TitleName">
     <p style="margin:3%;">Bharat Moves On Rapido!</p>
     <div class="TitleNameInputHOLD">
-      <input class="TitleNameInput" placeholder="Bharat Moves On Rapido!"><br>
-      <input class="TitleNameInput" placeholder="Bharat Moves On Rapido!"><br>
+      <input class="TitleNameInput" id="SearchBox" placeholder="Bharat Moves On Rapido!"><br>
+      <!-- <input class="TitleNameInput" placeholder="Bharat Moves On Rapido!"><br> -->
+      <div id="Suggestions"></div>
     </div>
+
+
+    <style>
+      #Suggestions {
+
+        border: 1px solid #ccc;
+        max-width: 250px;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+
+      }
+
+      .Suggestion-Item {
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      .Suggestion-Item:hover {
+        background-color: black;
+      }
+    </style>
+
+
+
+
+
+    <script>
+
+const Data = ["Rapido","Ola","Uber","Savaari","Meru","Jugnoo","Gozo","BlaBlaCar","Zophop","Yulu"];
+ 
+const searchbox = document.getElementById("SearchBox");
+const suggestions = document.getElementById("Suggestions");
+
+searchbox.addEventListener("input", function () {
+
+  const value = this.value.toLowerCase();
+  suggestions.innerHTML = "";
+
+  if (value === "") return;
+
+  const filtered = Data.filter(item =>
+    item.toLowerCase().includes(value)
+  );
+
+  filtered.forEach(item => {
+
+    let div = document.createElement("div");
+    div.classList.add("Suggestion-Item");
+    div.textContent = item;
+
+    div.onclick = function () {
+      searchbox.value = item;
+      suggestions.innerHTML = "";
+    };
+
+    suggestions.appendChild(div);
+
+  });
+
+}); 
+
+</script>
+
+
+
+
+
+
+
+
 
     <button class="Titlebutton" onclick="showAlert()">Book Ride</button>
 
     <script>
 
-   function showAlert(){
+      function showAlert() {
 
-   alert("Welcome to Bharat Moves On Rapido!")
+        alert("Welcome to Bharat Moves On Rapido!")
 
-   }
+      }
 
     </script>
 
@@ -129,143 +204,143 @@
   </div>
 
   <div class="Footer_1">
-   <hr>
-  <div class="container">
+    <hr>
+    <div class="container">
 
-   
 
-    <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/X.svg">
+
+      <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/X.svg">
+      </div>
+      <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/y.svg">
+      </div>
+      <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/I.svg">
+      </div>
+
+
     </div>
-    <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/y.svg">
-    </div>
-    <div class="iconitem"><img class="Icon_Item_IMG" src="/IMG/I.svg">
-    </div>
 
+    <div>
 
+    </div>
+    <hr>
   </div>
-
-  <div>
-
-  </div>
-   <hr>
-</div>
 
   <div class="Footer_1">
-   
-  <div class="Footer_container">
-    <div class="Footer_Img">
-      <img src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113" height="48">
+
+    <div class="Footer_container">
+      <div class="Footer_Img">
+        <img src="/IMG/NewLogo.svg" alt="Img not Found...!" width="113" height="48">
+      </div>
+    </div>
+
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Home
+
+      </div>
+
+
+      <div class="Footer_Text_2">
+
+        Customer Terms - Bike Taxi
+      </div>
+
+    </div>
+
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        About Us
+
+      </div>
+
+
+      <div class="Footer_Text_2">
+
+        Customer Terms - Cabs and Auto
+
+      </div>
+
+    </div>
+
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Careers
+
+      </div>
+
+
+      <div class="Footer_Text_2">
+
+        Corporate Affairs
+
+      </div>
+
+    </div>
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Safety
+
+      </div>
+
+
+      <div class="Footer_Text_2">
+
+        Captain Terms - Bike Taxi
+
+      </div>
+
+    </div>
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Blog
+      </div>
+
+
+      <div class="Footer_Text_2">
+
+        Captain Terms - Cabs and Auto
+
+      </div>
+
+    </div>
+
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Press
+
+      </div>
+
+    </div>
+
+    <div class="FooterText_container">
+
+      <div class="Footer_Text">
+
+        Privacy Policy
+
+      </div>
+
     </div>
   </div>
-
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Home
-
-    </div>
-
-
-    <div class="Footer_Text_2">
-
-      Customer Terms - Bike Taxi
-    </div>
-
-  </div>
-
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      About Us
-
-    </div>
-
-
-    <div class="Footer_Text_2">
-
-      Customer Terms - Cabs and Auto
-
-    </div>
-
-  </div>
-
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Careers
-
-    </div>
-
-
-    <div class="Footer_Text_2">
-
-      Corporate Affairs
-
-    </div>
-
-  </div>
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Safety
-
-    </div>
-
-
-    <div class="Footer_Text_2">
-
-      Captain Terms - Bike Taxi
-
-    </div>
-
-  </div>
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Blog
-    </div>
-
-
-    <div class="Footer_Text_2">
-
-      Captain Terms - Cabs and Auto
-
-    </div>
-
-  </div>
-
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Press
-
-    </div>
-
-  </div>
-
-  <div class="FooterText_container">
-
-    <div class="Footer_Text">
-
-      Privacy Policy
-
-    </div>
-
-  </div>
-</div>
 
   <div class="Footer_1">
-<hr>
+    <hr>
 
-<p class="FooterText_container_rights">© 2026 Document Demo. All rights reserved.</p>
+    <p class="FooterText_container_rights">© 2026 Document Demo. All rights reserved.</p>
 
-</div>
+  </div>
 
 </body>
 

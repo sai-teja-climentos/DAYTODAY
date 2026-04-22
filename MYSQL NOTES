@@ -1,0 +1,328 @@
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+CUsersTECHVITYMYSQL -u root -p
+Enter password 
+Welcome to the MySQL monitor.  Commands end with ; or g.
+Your MySQL connection id is 28
+Server version 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle andor its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation andor its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or 'h' for help. Type 'c' to clear the current input statement.
+
+mysql SHOW DATABASES;
++--------------------+
+ Database           
++--------------------+
+ company_db         
+ information_schema 
+ mysql              
+ performance_schema 
+ sys                
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql USE company_db;
+Database changed
+mysql SHOW TABLES;
++----------------------+
+ Tables_in_company_db 
++----------------------+
+ employees            
++----------------------+
+1 row in set (0.00 sec)
+
+mysql SELECT  FROM employees;
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
++-------------+----------+--------------+----------------+------------+
+1 row in set (0.02 sec)
+
+mysql  ^C
+mysql ^C
+mysql INSERT INTO employees (emp_name,emp_email,emp_department,emp_salary)VALUES ('THETOM','THETOM@GAMIL','OPS',1002.97);
+Query OK, 1 row affected (0.04 sec)
+
+mysql SELECT  FROM employees;
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
+           2  THETOM    THETOM@GAMIL  OPS                1002.97 
++-------------+----------+--------------+----------------+------------+
+2 rows in set (0.00 sec)
+
+mysql INSERT INTO employees (emp_name,emp_email,emp_department,emp_salary)('RAM','RAM@GAMIL','AD',870.56)
+    -
+    - ;
+ERROR 1064 (42000) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''RAM','RAM@GAMIL','AD',870.56)' at line 1
+mysql INSERT INTO employees (emp_name,emp_email,emp_department,emp_salary)VALUES('RAM','RAM@GAMIL','AD',870.56),('SAM','SAM@GAMIL','OPS',840.26);
+Query OK, 2 rows affected (0.02 sec)
+Records 2  Duplicates 0  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
+           2  THETOM    THETOM@GAMIL  OPS                1002.97 
+           3  RAM       RAM@GAMIL     AD                  870.56 
+           4  SAM       SAM@GAMIL     OPS                 840.26 
++-------------+----------+--------------+----------------+------------+
+4 rows in set (0.00 sec)
+
+mysql INSERT INTO employees (emp_name,emp_email,emp_department,emp_salary)VALUES ('THERAVI','THERAVI@GAMIL',1009.97);
+ERROR 1136 (21S01) Column count doesn't match value count at row 1
+mysql INSERT INTO employees (emp_name,emp_email,emp_department,emp_salary)VALUES ('THERAVI','THERAVI@GAMIL','',1009.97);
+Query OK, 1 row affected (0.01 sec)
+
+mysql SELECT  FROM employees;
++-------------+----------+---------------+----------------+------------+
+ employee_id  emp_name  emp_email      emp_department  emp_salary 
++-------------+----------+---------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL   HR                 1000.00 
+           2  THETOM    THETOM@GAMIL   OPS                1002.97 
+           3  RAM       RAM@GAMIL      AD                  870.56 
+           4  SAM       SAM@GAMIL      OPS                 840.26 
+           5  THERAVI   THERAVI@GAMIL                     1009.97 
++-------------+----------+---------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql SELECT emp_name,emp_salary FROM employees;
++----------+------------+
+ emp_name  emp_salary 
++----------+------------+
+ THEJON       1000.00 
+ THETOM       1002.97 
+ RAM           870.56 
+ SAM           840.26 
+ THERAVI      1009.97 
++----------+------------+
+5 rows in set (0.00 sec)
+
+mysql SELECT  FROM employees WHERE emp_department = 'OPS';
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           2  THETOM    THETOM@GAMIL  OPS                1002.97 
+           4  SAM       SAM@GAMIL     OPS                 840.26 
++-------------+----------+--------------+----------------+------------+
+2 rows in set (0.00 sec)
+
+mysql SELECT  FROM employees WHERE emp_department = 'OPS','HR';
+ERROR 1064 (42000) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','HR'' at line 1
+mysql SELECT  FROM employees WHERE emp_department = ('OPS','HR');
+ERROR 1241 (21000) Operand should contain 1 column(s)
+mysql SELECT  FROM employees WHERE emp_department IN ('OPS','HR');
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
+           2  THETOM    THETOM@GAMIL  OPS                1002.97 
+           4  SAM       SAM@GAMIL     OPS                 840.26 
++-------------+----------+--------------+----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql SELECT  FROM employees WHERE emp_department IN ('OPS','');
++-------------+----------+---------------+----------------+------------+
+ employee_id  emp_name  emp_email      emp_department  emp_salary 
++-------------+----------+---------------+----------------+------------+
+           2  THETOM    THETOM@GAMIL   OPS                1002.97 
+           4  SAM       SAM@GAMIL      OPS                 840.26 
+           5  THERAVI   THERAVI@GAMIL                     1009.97 
++-------------+----------+---------------+----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql SELECT  FROM employees WHERE emp_department = 'OPS' OR emp_department = 'HR';
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
+           2  THETOM    THETOM@GAMIL  OPS                1002.97 
+           4  SAM       SAM@GAMIL     OPS                 840.26 
++-------------+----------+--------------+----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql SELECT  FROM employees WHERE emp_name = 'THEJON';
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
++-------------+----------+--------------+----------------+------------+
+1 row in set (0.00 sec)
+
+mysql C - (CREATE) - ADD
+    - R - (READ) - VIEW
+    - U - (UPDATE) - EDIT
+    - D - (DELETE) - REMOVE;
+ERROR 1064 (42000) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'C - (CREATE) - ADD
+R - (READ) - VIEW
+U - (UPDATE) - EDIT
+D - (DELETE) - REMOVE' at line 1
+mysql SELECT  FROM employees WHERE emp_name = 'THEJON';
++-------------+----------+--------------+----------------+------------+
+ employee_id  emp_name  emp_email     emp_department  emp_salary 
++-------------+----------+--------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL  HR                 1000.00 
++-------------+----------+--------------+----------------+------------+
+1 row in set (0.00 sec)
+
+mysql SELECT  FROM employees;
++-------------+----------+---------------+----------------+------------+
+ employee_id  emp_name  emp_email      emp_department  emp_salary 
++-------------+----------+---------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL   HR                 1000.00 
+           2  THETOM    THETOM@GAMIL   OPS                1002.97 
+           3  RAM       RAM@GAMIL      AD                  870.56 
+           4  SAM       SAM@GAMIL      OPS                 840.26 
+           5  THERAVI   THERAVI@GAMIL                     1009.97 
++-------------+----------+---------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql UPDATE employees SET emp_department = 'HR' WHERE employee_id = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched 1  Changed 1  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+----------+---------------+----------------+------------+
+ employee_id  emp_name  emp_email      emp_department  emp_salary 
++-------------+----------+---------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL   HR                 1000.00 
+           2  THETOM    THETOM@GAMIL   OPS                1002.97 
+           3  RAM       RAM@GAMIL      AD                  870.56 
+           4  SAM       SAM@GAMIL      OPS                 840.26 
+           5  THERAVI   THERAVI@GAMIL  HR                 1009.97 
++-------------+----------+---------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql UPDATE employees SET emp_email = (''+'.COM');
+ERROR 1292 (22007) Truncated incorrect DOUBLE value '.COM'
+mysql UPDATE employees SET emp_email = CONCAT(emp_email,'.COM')
+    - WHERE emp_email NOT LIKE '%.COM';
+Query OK, 5 rows affected (0.02 sec)
+Rows matched 5  Changed 5  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+----------+-------------------+----------------+------------+
+ employee_id  emp_name  emp_email          emp_department  emp_salary 
++-------------+----------+-------------------+----------------+------------+
+           1  THEJON    THEJON@GAMIL.COM   HR                 1000.00 
+           2  THETOM    THETOM@GAMIL.COM   OPS                1002.97 
+           3  RAM       RAM@GAMIL.COM      AD                  870.56 
+           4  SAM       SAM@GAMIL.COM      OPS                 840.26 
+           5  THERAVI   THERAVI@GAMIL.COM  HR                 1009.97 
++-------------+----------+-------------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql UPDATE employees SET emp_name = CONCAT('Mr.',emp_name)
+    -  WHERE emp_name NOT LIKE 'Mr.%';
+Query OK, 5 rows affected (0.02 sec)
+Rows matched 5  Changed 5  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+------------+-------------------+----------------+------------+
+ employee_id  emp_name    emp_email          emp_department  emp_salary 
++-------------+------------+-------------------+----------------+------------+
+           1  Mr.THEJON   THEJON@GAMIL.COM   HR                 1000.00 
+           2  Mr.THETOM   THETOM@GAMIL.COM   OPS                1002.97 
+           3  Mr.RAM      RAM@GAMIL.COM      AD                  870.56 
+           4  Mr.SAM      SAM@GAMIL.COM      OPS                 840.26 
+           5  Mr.THERAVI  THERAVI@GAMIL.COM  HR                 1009.97 
++-------------+------------+-------------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql UPDATE employees SET emp_salary = CONCAT('rs.',emp_salary)
+    - WHERE emp_salary NOT LIKE 'rs.%';
+ERROR 1366 (HY000) Incorrect decimal value 'rs.1000.00' for column 'emp_salary' at row 1
+mysql ^C
+mysql ^C
+mysql UPDATE employees SET emp_department = CONCAT('COMM.',emp_department)
+    - WHERE emp_department NOT LIKE 'COMM.%';
+Query OK, 5 rows affected (0.01 sec)
+Rows matched 5  Changed 5  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+------------+-------------------+----------------+------------+
+ employee_id  emp_name    emp_email          emp_department  emp_salary 
++-------------+------------+-------------------+----------------+------------+
+           1  Mr.THEJON   THEJON@GAMIL.COM   COMM.HR            1000.00 
+           2  Mr.THETOM   THETOM@GAMIL.COM   COMM.OPS           1002.97 
+           3  Mr.RAM      RAM@GAMIL.COM      COMM.AD             870.56 
+           4  Mr.SAM      SAM@GAMIL.COM      COMM.OPS            840.26 
+           5  Mr.THERAVI  THERAVI@GAMIL.COM  COMM.HR            1009.97 
++-------------+------------+-------------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql UPDATE employees SET emp_department = CONCAT('_',emp_department)
+    - WHERE emp_department NOT LIKE '%_%';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched 0  Changed 0  Warnings 0
+
+mysql UPDATE employees SET emp_department = CONCAT('_',emp_department)
+    - WHERE emp_department NOT LIKE '%COMM%';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched 0  Changed 0  Warnings 0
+
+mysql UPDATE employees SET emp_department = REPLACE(emp_department,'.','_')
+    -  WHERE emp_department NOT LIKE '%.%';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched 0  Changed 0  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+------------+-------------------+----------------+------------+
+ employee_id  emp_name    emp_email          emp_department  emp_salary 
++-------------+------------+-------------------+----------------+------------+
+           1  Mr.THEJON   THEJON@GAMIL.COM   COMM.HR            1000.00 
+           2  Mr.THETOM   THETOM@GAMIL.COM   COMM.OPS           1002.97 
+           3  Mr.RAM      RAM@GAMIL.COM      COMM.AD             870.56 
+           4  Mr.SAM      SAM@GAMIL.COM      COMM.OPS            840.26 
+           5  Mr.THERAVI  THERAVI@GAMIL.COM  COMM.HR            1009.97 
++-------------+------------+-------------------+----------------+------------+
+5 rows in set (0.00 sec)
+
+mysql DELETE FROM employees WHERE employee_id = 5;
+Query OK, 1 row affected (0.05 sec)
+
+mysql SELECT  FROM employees;
++-------------+-----------+------------------+----------------+------------+
+ employee_id  emp_name   emp_email         emp_department  emp_salary 
++-------------+-----------+------------------+----------------+------------+
+           1  Mr.THEJON  THEJON@GAMIL.COM  COMM.HR            1000.00 
+           2  Mr.THETOM  THETOM@GAMIL.COM  COMM.OPS           1002.97 
+           3  Mr.RAM     RAM@GAMIL.COM     COMM.AD             870.56 
+           4  Mr.SAM     SAM@GAMIL.COM     COMM.OPS            840.26 
++-------------+-----------+------------------+----------------+------------+
+4 rows in set (0.00 sec)
+
+mysql  DELETE FROM employees WHERE emp_department;
+ERROR 1292 (22007) Truncated incorrect DOUBLE value 'COMM.HR'
+mysql ALTER TABLE employees DROP COLUMN emp_department;
+Query OK, 0 rows affected (0.18 sec)
+Records 0  Duplicates 0  Warnings 0
+
+mysql SELECT  FROM employees;
++-------------+-----------+------------------+------------+
+ employee_id  emp_name   emp_email         emp_salary 
++-------------+-----------+------------------+------------+
+           1  Mr.THEJON  THEJON@GAMIL.COM     1000.00 
+           2  Mr.THETOM  THETOM@GAMIL.COM     1002.97 
+           3  Mr.RAM     RAM@GAMIL.COM         870.56 
+           4  Mr.SAM     SAM@GAMIL.COM         840.26 
++-------------+-----------+------------------+------------+
+4 rows in set (0.00 sec)
+
+mysql
+
+
+
+
+
+
+

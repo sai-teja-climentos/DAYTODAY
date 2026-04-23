@@ -1,0 +1,675 @@
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\TECHVITY>mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 29
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW TEBELS
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TEBELS' at line 1
+mysql> SHOW DATABASES
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| company_db         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)
+
+mysql> SHOW TABLES;
+ERROR 1046 (3D000): No database selected
+mysql> USE company_db;
+Database changed
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_company_db |
++----------------------+
+| employees            |
++----------------------+
+1 row in set (0.03 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+
+| employee_id | emp_name  | emp_email        | emp_salary |
++-------------+-----------+------------------+------------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |
++-------------+-----------+------------------+------------+
+4 rows in set (0.03 sec)
+
+mysql> INSERT INTO employees (emp_name,emp_email,emp_salary)
+VALUES ('Mr.RAVI','RAVIGAMIL.COM',1007.90);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+
+| employee_id | emp_name  | emp_email        | emp_salary |
++-------------+-----------+------------------+------------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |
++-------------+-----------+------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE employees ADD emp_age INT;
+Query OK, 0 rows affected (0.20 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |    NULL |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |    NULL |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |    NULL |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |    NULL |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |    NULL |
++-------------+-----------+------------------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO (emp_name,emp_email,emp_salary,emp_age)
+    -> VALUES ('JON','JON@GAMIL.COM',1002.95,45);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(emp_name,emp_email,emp_salary,emp_age)
+VALUES ('JON','JON@GAMIL.COM',1002.95,45' at line 1
+mysql> INSERT INTO employees (emp_name,emp_email,emp_salary,emp_age)
+    -> VALUES ('JON','JON@GAMIL.COM',1002.95,45);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |    NULL |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |    NULL |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |    NULL |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |    NULL |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |    NULL |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE employees SET emp_age = 42 WHERE employee_id = 1;^C
+mysql> ;
+ERROR:
+No query specified
+
+mysql> UPDATE employees SET emp_age = 42 WHERE employee_id = 1;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |    NULL |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |    NULL |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |    NULL |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |    NULL |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql>  UPDATE employees SET emp_age = 37 WHERE employee_id = 2;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employees SET emp_age = 42 WHERE employee_id = 1;
+Query OK, 0 rows affected (0.04 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql>  UPDATE employees SET emp_age = 47 WHERE employee_id = 2; UPDATE employees SET emp_age = 37 WHERE employee_id = 3; UPDATE employees SET emp_age = 40 WHERE employee_id = 4; UPDATE employees SET emp_age = 39 WHERE employee_id = 6;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |      37 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |      40 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT FROM employees WHERE emp_age = 45;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM employees WHERE emp_age = 45' at line 1
+mysql> SELECT * FROM employees WHERE emp_age > 45;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
++-------------+-----------+------------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_age > 40;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |      37 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |      40 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary > 1000;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary > 999.10;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary > 999.100;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           1 | Mr.THEJON | THEJON@GAMIL.COM |    1000.00 |      42 |
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |      37 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |      40 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary = 1002;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary = 1002.97;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
++-------------+-----------+------------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary = 1002.95;
++-------------+----------+---------------+------------+---------+
+| employee_id | emp_name | emp_email     | emp_salary | emp_age |
++-------------+----------+---------------+------------+---------+
+|           7 | JON      | JON@GAMIL.COM |    1002.95 |      45 |
++-------------+----------+---------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE employees;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| employee_id | int           | NO   | PRI | NULL    | auto_increment |
+| emp_name    | varchar(100)  | YES  |     | NULL    |                |
+| emp_email   | varchar(100)  | YES  |     | NULL    |                |
+| emp_salary  | decimal(10,2) | YES  |     | NULL    |                |
+| emp_age     | int           | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+5 rows in set (0.05 sec)
+
+mysql> DELETE FROM employees WHERE employee_id =1;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT * FROM employees;
++-------------+-----------+------------------+------------+---------+
+| employee_id | emp_name  | emp_email        | emp_salary | emp_age |
++-------------+-----------+------------------+------------+---------+
+|           2 | Mr.THETOM | THETOM@GAMIL.COM |    1002.97 |      47 |
+|           3 | Mr.RAM    | RAM@GAMIL.COM    |     870.56 |      37 |
+|           4 | Mr.SAM    | SAM@GAMIL.COM    |     840.26 |      40 |
+|           6 | Mr.RAVI   | RAVIGAMIL.COM    |    1007.90 |      39 |
+|           7 | JON       | JON@GAMIL.COM    |    1002.95 |      45 |
++-------------+-----------+------------------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> DELETE FROM employees;
+Query OK, 5 rows affected (0.06 sec)
+
+mysql> SELECT * FROM employees;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE employees;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| employee_id | int           | NO   | PRI | NULL    | auto_increment |
+| emp_name    | varchar(100)  | YES  |     | NULL    |                |
+| emp_email   | varchar(100)  | YES  |     | NULL    |                |
+| emp_salary  | decimal(10,2) | YES  |     | NULL    |                |
+| emp_age     | int           | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO employees (emp_name, emp_email, emp_salary, emp_age) VALUES
+    -> ('Emp1','emp1@gmail.com',12000,25);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> SELECT * FROM employees;
++-------------+----------+----------------+------------+---------+
+| employee_id | emp_name | emp_email      | emp_salary | emp_age |
++-------------+----------+----------------+------------+---------+
+|           8 | Emp1     | emp1@gmail.com |   12000.00 |      25 |
++-------------+----------+----------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> TRUNCATE TABLE employees;
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> SELECT * FROM employees;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO employees (emp_name, emp_email, emp_salary, emp_age) VALUES
+    ->     -> ('Emp1','emp1@gmail.com',12000,25);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('Emp1','emp1@gmail.com',12000,25)' at line 2
+mysql> INSERT INTO employees (emp_name, emp_email, emp_salary, emp_age) VALUES
+    -> ('Emp1','emp1@gmail.com',12000,25);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT * FROM employees;
++-------------+----------+----------------+------------+---------+
+| employee_id | emp_name | emp_email      | emp_salary | emp_age |
++-------------+----------+----------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com |   12000.00 |      25 |
++-------------+----------+----------------+------------+---------+
+1 row in set (0.04 sec)
+
+mysql> TRUNCATE TABLE employees;
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> INSERT INTO employees (emp_name, emp_email, emp_salary, emp_age) VALUES
+    -> ('Emp1','emp1@gmail.com',12000,25),
+    -> ('Emp2','emp2@gmail.com',15000,30),
+    -> ('Emp3','emp3@gmail.com',18000,28),
+    -> ('Emp4','emp4@gmail.com',20000,35),
+    -> ('Emp5','emp5@gmail.com',17000,40),
+    -> ('Emp6','emp6@gmail.com',22000,45),
+    -> ('Emp7','emp7@gmail.com',25000,50),
+    -> ('Emp8','emp8@gmail.com',27000,32),
+    -> ('Emp9','emp9@gmail.com',30000,29),
+    -> ('Emp10','emp10@gmail.com',35000,38),
+    -> ('Emp11','emp11@gmail.com',14000,26),
+    -> ('Emp12','emp12@gmail.com',16000,31),
+    -> ('Emp13','emp13@gmail.com',19000,27),
+    -> ('Emp14','emp14@gmail.com',21000,36),
+    -> ('Emp15','emp15@gmail.com',17500,41),
+    -> ('Emp16','emp16@gmail.com',22500,46),
+    -> ('Emp17','emp17@gmail.com',25500,51),
+    -> ('Emp18','emp18@gmail.com',27500,33),
+    -> ('Emp19','emp19@gmail.com',30500,30),
+    -> ('Emp20','emp20@gmail.com',35500,39),
+    -> ('Emp21','emp21@gmail.com',13000,24),
+    -> ('Emp22','emp22@gmail.com',15500,29),
+    -> ('Emp23','emp23@gmail.com',18500,34),
+    -> ('Emp24','emp24@gmail.com',20500,37),
+    -> ('Emp25','emp25@gmail.com',17200,42),
+    -> ('Emp26','emp26@gmail.com',22200,47),
+    -> ('Emp27','emp27@gmail.com',25200,52),
+    -> ('Emp28','emp28@gmail.com',27200,31),
+    -> ('Emp29','emp29@gmail.com',30200,28),
+    -> ('Emp30','emp30@gmail.com',35200,36),
+    -> ('Emp31','emp31@gmail.com',14500,25),
+    -> ('Emp32','emp32@gmail.com',16500,30),
+    -> ('Emp33','emp33@gmail.com',19500,33),
+    -> ('Emp34','emp34@gmail.com',21500,38),
+    -> ('Emp35','emp35@gmail.com',17800,43),
+    -> ('Emp36','emp36@gmail.com',22800,48),
+    -> ('Emp37','emp37@gmail.com',25800,49),
+    -> ('Emp38','emp38@gmail.com',27800,34),
+    -> ('Emp39','emp39@gmail.com',30800,27),
+    -> ('Emp40','emp40@gmail.com',35800,35),
+    -> ('Emp41','emp41@gmail.com',13500,26),
+    -> ('Emp42','emp42@gmail.com',15800,31),
+    -> ('Emp43','emp43@gmail.com',18800,29),
+    -> ('Emp44','emp44@gmail.com',20800,36),
+    -> ('Emp45','emp45@gmail.com',17400,44),
+    -> ('Emp46','emp46@gmail.com',22400,45),
+    -> ('Emp47','emp47@gmail.com',25400,50),
+    -> ('Emp48','emp48@gmail.com',27400,32),
+    -> ('Emp49','emp49@gmail.com',30400,28),
+    -> ('Emp50','emp50@gmail.com',35400,37),
+    -> ('Emp51','emp51@gmail.com',14200,24),
+    -> ('Emp52','emp52@gmail.com',16200,30),
+    -> ('Emp53','emp53@gmail.com',19200,34),
+    -> ('Emp54','emp54@gmail.com',21200,39),
+    -> ('Emp55','emp55@gmail.com',17600,41),
+    -> ('Emp56','emp56@gmail.com',22600,46),
+    -> ('Emp57','emp57@gmail.com',25600,51),
+    -> ('Emp58','emp58@gmail.com',27600,33),
+    -> ('Emp59','emp59@gmail.com',30600,29),
+    -> ('Emp60','emp60@gmail.com',35600,38),
+    -> ('Emp61','emp61@gmail.com',13800,25),
+    -> ('Emp62','emp62@gmail.com',16800,31),
+    -> ('Emp63','emp63@gmail.com',19800,35),
+    -> ('Emp64','emp64@gmail.com',21800,40),
+    -> ('Emp65','emp65@gmail.com',17900,42),
+    -> ('Emp66','emp66@gmail.com',22900,47),
+    -> ('Emp67','emp67@gmail.com',25900,52),
+    -> ('Emp68','emp68@gmail.com',27900,34),
+    -> ('Emp69','emp69@gmail.com',30900,27),
+    -> ('Emp70','emp70@gmail.com',35900,36),
+    -> ('Emp71','emp71@gmail.com',14100,26),
+    -> ('Emp72','emp72@gmail.com',16100,30),
+    -> ('Emp73','emp73@gmail.com',19100,33),
+    -> ('Emp74','emp74@gmail.com',21100,37),
+    -> ('Emp75','emp75@gmail.com',17300,43),
+    -> ('Emp76','emp76@gmail.com',22300,48),
+    -> ('Emp77','emp77@gmail.com',25300,49),
+    -> ('Emp78','emp78@gmail.com',27300,32),
+    -> ('Emp79','emp79@gmail.com',30300,28),
+    -> ('Emp80','emp80@gmail.com',35300,35),
+    -> ('Emp81','emp81@gmail.com',13900,24),
+    -> ('Emp82','emp82@gmail.com',15900,29),
+    -> ('Emp83','emp83@gmail.com',18900,34),
+    -> ('Emp84','emp84@gmail.com',20900,38),
+    -> ('Emp85','emp85@gmail.com',17100,41),
+    -> ('Emp86','emp86@gmail.com',22100,46),
+    -> ('Emp87','emp87@gmail.com',25100,50),
+    -> ('Emp88','emp88@gmail.com',27100,33),
+    -> ('Emp89','emp89@gmail.com',30100,30),
+    -> ('Emp90','emp90@gmail.com',35100,39),
+    -> ('Emp91','emp91@gmail.com',14300,25),
+    -> ('Emp92','emp92@gmail.com',16300,31),
+    -> ('Emp93','emp93@gmail.com',19300,36),
+    -> ('Emp94','emp94@gmail.com',21300,40),
+    -> ('Emp95','emp95@gmail.com',17700,42),
+    -> ('Emp96','emp96@gmail.com',22700,47),
+    -> ('Emp97','emp97@gmail.com',25700,51),
+    -> ('Emp98','emp98@gmail.com',27700,34),
+    -> ('Emp99','emp99@gmail.com',30700,28),
+    -> ('Emp100','emp100@gmail.com',35700,37);
+Query OK, 100 rows affected (0.06 sec)
+Records: 100  Duplicates: 0  Warnings: 0
+
+mysql>  SELECT * FROM employees;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com   |   12000.00 |      25 |
+|           2 | Emp2     | emp2@gmail.com   |   15000.00 |      30 |
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          11 | Emp11    | emp11@gmail.com  |   14000.00 |      26 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          21 | Emp21    | emp21@gmail.com  |   13000.00 |      24 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          31 | Emp31    | emp31@gmail.com  |   14500.00 |      25 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          41 | Emp41    | emp41@gmail.com  |   13500.00 |      26 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          51 | Emp51    | emp51@gmail.com  |   14200.00 |      24 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          61 | Emp61    | emp61@gmail.com  |   13800.00 |      25 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          71 | Emp71    | emp71@gmail.com  |   14100.00 |      26 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          81 | Emp81    | emp81@gmail.com  |   13900.00 |      24 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          91 | Emp91    | emp91@gmail.com  |   14300.00 |      25 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      37 |
++-------------+----------+------------------+------------+---------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE emp_salary > 15000;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      37 |
++-------------+----------+------------------+------------+---------+
+89 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM employees WHERE emp_salary > 15000;
++----------+
+| COUNT(*) |
++----------+
+|       89 |
++----------+
+1 row in set (0.04 sec)
+
+mysql> SELECT COUNT(*) FROM employees WHERE emp_salary < 15000;
++----------+
+| COUNT(*) |
++----------+
+|       10 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM employees WHERE emp_salary = 15000;
++----------+
+| COUNT(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql>

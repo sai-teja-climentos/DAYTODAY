@@ -1,0 +1,1777 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\TECHVITY> MYSQL -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 26
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| company_db         |
+| employye_db        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> USE employye_db;
+Database changed
+mysql> SHOW TABLES employye_db;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employye_db' at line 1
+mysql> SHOW TABLES;
++-----------------------+
+| Tables_in_employye_db |
++-----------------------+
+| employees             |
++-----------------------+
+1 row in set (0.03 sec)
+
+mysql> SHOW TABLES;
++-----------------------+
+| Tables_in_employye_db |
++-----------------------+
+| employees             |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "P%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    2 | Priya Reddy   | priya.reddy@gmail.com   | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    8 | Pooja Nair    | pooja.nair@gmail.com    | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   28 | Preeti Saxena | preeti.saxena@gmail.com | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   36 | Pankaj Verma  | pankaj.verma@gmail.com  | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+4 rows in set (0.01 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma   | amit.sharma@gmail.com   | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar   | arjun.kumar@gmail.com   | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das    | anjali.das@gmail.com    | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   21 | Ajay Singh    | ajay.singh@gmail.com    | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   27 | Ankit Agarwal | ankit.agarwal@gmail.com | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   31 | Ashok Reddy   | ashok.reddy@gmail.com   | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   37 | Alok Singh    | alok.singh@gmail.com    | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas    | anu.thomas@gmail.com    | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%A%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%Y%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    2 | Priya Reddy  | priya.reddy@gmail.com  | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|   12 | Meena Iyer   | meena.iyer@gmail.com   | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   14 | Divya Menon  | divya.menon@gmail.com  | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav  | manoj.yadav@gmail.com  | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   21 | Ajay Singh   | ajay.singh@gmail.com   | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   31 | Ashok Reddy  | ashok.reddy@gmail.com  | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   34 | Sanjay Gupta | sanjay.gupta@gmail.com | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   49 | Tanya Singh  | tanya.singh@gmail.com  | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav  | nitin.yadav@gmail.com  | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%Z%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%A%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%B%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|   13 | Suresh Babu   | suresh.babu@gmail.com   | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   29 | Mohit Bansal  | mohit.bansal@gmail.com  | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   40 | Bhavna Kapoor | bhavna.kapoor@gmail.com | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%C%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%D%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    2 | Priya Reddy  | priya.reddy@gmail.com  | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|   10 | Anjali Das   | anjali.das@gmail.com   | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   14 | Divya Menon  | divya.menon@gmail.com  | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav  | manoj.yadav@gmail.com  | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   19 | Deepak Jain  | deepak.jain@gmail.com  | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   31 | Ashok Reddy  | ashok.reddy@gmail.com  | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi | lakshmi.devi@gmail.com | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   50 | Nitin Yadav  | nitin.yadav@gmail.com  | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT e_name FROM employees WHERE e_name LIKE "%C%";
+Empty set (0.00 sec)
+
+mysql> SELECT e_name FROM employees WHERE e_name LIKE "%A%";
++----------------+
+| e_name         |
++----------------+
+| Amit Sharma    |
+| Priya Reddy    |
+| Rahul Verma    |
+| Sneha Patil    |
+| Arjun Kumar    |
+| Neha Gupta     |
+| Vikram Singh   |
+| Pooja Nair     |
+| Ravi Teja      |
+| Anjali Das     |
+| Kiran Rao      |
+| Meena Iyer     |
+| Suresh Babu    |
+| Divya Menon    |
+| Manoj Yadav    |
+| Kavita Joshi   |
+| Ramesh Gupta   |
+| Shalini Kapoor |
+| Deepak Jain    |
+| Swati Mishra   |
+| Ajay Singh     |
+| Nisha Arora    |
+| Harish Patel   |
+| Komal Shah     |
+| Sunil Kumar    |
+| Rekha Nair     |
+| Ankit Agarwal  |
+| Preeti Saxena  |
+| Mohit Bansal   |
+| Geeta Pillai   |
+| Ashok Reddy    |
+| Lakshmi Devi   |
+| Naveen Kumar   |
+| Sanjay Gupta   |
+| Ritu Sharma    |
+| Pankaj Verma   |
+| Alok Singh     |
+| Sheetal Jain   |
+| Tarun Mehta    |
+| Bhavna Kapoor  |
+| Gaurav Mishra  |
+| Sakshi Arora   |
+| Rohit Sharma   |
+| Anu Thomas     |
+| Karthik Nair   |
+| Varun Gupta    |
+| Isha Kapoor    |
+| Raj Malhotra   |
+| Tanya Singh    |
+| Nitin Yadav    |
++----------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT e_name FROM employees WHERE e_name LIKE "%J%";
++--------------+
+| e_name       |
++--------------+
+| Arjun Kumar  |
+| Pooja Nair   |
+| Ravi Teja    |
+| Anjali Das   |
+| Manoj Yadav  |
+| Kavita Joshi |
+| Deepak Jain  |
+| Ajay Singh   |
+| Sanjay Gupta |
+| Pankaj Verma |
+| Sheetal Jain |
+| Raj Malhotra |
++--------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT e_name AND e_id FROM employees WHERE e_name LIKE "%J%";
++-----------------+
+| e_name AND e_id |
++-----------------+
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
++-----------------+
+12 rows in set, 12 warnings (0.00 sec)
+
+mysql> SELECT e_name AND e_id FROM employees WHERE e_name LIKE "%A%";
++-----------------+
+| e_name AND e_id |
++-----------------+
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
+|               0 |
++-----------------+
+50 rows in set, 50 warnings (0.00 sec)
+
+mysql> SELECT e_name , e_id FROM employees WHERE e_name LIKE "%A%";
++----------------+------+
+| e_name         | e_id |
++----------------+------+
+| Amit Sharma    |    1 |
+| Priya Reddy    |    2 |
+| Rahul Verma    |    3 |
+| Sneha Patil    |    4 |
+| Arjun Kumar    |    5 |
+| Neha Gupta     |    6 |
+| Vikram Singh   |    7 |
+| Pooja Nair     |    8 |
+| Ravi Teja      |    9 |
+| Anjali Das     |   10 |
+| Kiran Rao      |   11 |
+| Meena Iyer     |   12 |
+| Suresh Babu    |   13 |
+| Divya Menon    |   14 |
+| Manoj Yadav    |   15 |
+| Kavita Joshi   |   16 |
+| Ramesh Gupta   |   17 |
+| Shalini Kapoor |   18 |
+| Deepak Jain    |   19 |
+| Swati Mishra   |   20 |
+| Ajay Singh     |   21 |
+| Nisha Arora    |   22 |
+| Harish Patel   |   23 |
+| Komal Shah     |   24 |
+| Sunil Kumar    |   25 |
+| Rekha Nair     |   26 |
+| Ankit Agarwal  |   27 |
+| Preeti Saxena  |   28 |
+| Mohit Bansal   |   29 |
+| Geeta Pillai   |   30 |
+| Ashok Reddy    |   31 |
+| Lakshmi Devi   |   32 |
+| Naveen Kumar   |   33 |
+| Sanjay Gupta   |   34 |
+| Ritu Sharma    |   35 |
+| Pankaj Verma   |   36 |
+| Alok Singh     |   37 |
+| Sheetal Jain   |   38 |
+| Tarun Mehta    |   39 |
+| Bhavna Kapoor  |   40 |
+| Gaurav Mishra  |   41 |
+| Sakshi Arora   |   42 |
+| Rohit Sharma   |   43 |
+| Anu Thomas     |   44 |
+| Karthik Nair   |   45 |
+| Varun Gupta    |   46 |
+| Isha Kapoor    |   47 |
+| Raj Malhotra   |   48 |
+| Tanya Singh    |   49 |
+| Nitin Yadav    |   50 |
++----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no e_name , e_phone_no FROM employees WHERE e_phone_no LIKE 9%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE 9%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "9%";
++------+------------+----------------+
+| e_id | e_phone_no | e_name         |
++------+------------+----------------+
+|    1 | 9876543210 | Amit Sharma    |
+|    2 | 9876543211 | Priya Reddy    |
+|    3 | 9876543212 | Rahul Verma    |
+|    4 | 9876543213 | Sneha Patil    |
+|    5 | 9876543214 | Arjun Kumar    |
+|    6 | 9876543215 | Neha Gupta     |
+|    7 | 9876543216 | Vikram Singh   |
+|    8 | 9876543217 | Pooja Nair     |
+|    9 | 9876543218 | Ravi Teja      |
+|   10 | 9876543219 | Anjali Das     |
+|   11 | 9876543220 | Kiran Rao      |
+|   12 | 9876543221 | Meena Iyer     |
+|   13 | 9876543222 | Suresh Babu    |
+|   14 | 9876543223 | Divya Menon    |
+|   15 | 9876543224 | Manoj Yadav    |
+|   16 | 9876543225 | Kavita Joshi   |
+|   17 | 9876543226 | Ramesh Gupta   |
+|   18 | 9876543227 | Shalini Kapoor |
+|   19 | 9876543228 | Deepak Jain    |
+|   20 | 9876543229 | Swati Mishra   |
+|   21 | 9876543230 | Ajay Singh     |
+|   22 | 9876543231 | Nisha Arora    |
+|   23 | 9876543232 | Harish Patel   |
+|   24 | 9876543233 | Komal Shah     |
+|   25 | 9876543234 | Sunil Kumar    |
+|   26 | 9876543235 | Rekha Nair     |
+|   27 | 9876543236 | Ankit Agarwal  |
+|   28 | 9876543237 | Preeti Saxena  |
+|   29 | 9876543238 | Mohit Bansal   |
+|   30 | 9876543239 | Geeta Pillai   |
+|   31 | 9876543240 | Ashok Reddy    |
+|   32 | 9876543241 | Lakshmi Devi   |
+|   33 | 9876543242 | Naveen Kumar   |
+|   34 | 9876543243 | Sanjay Gupta   |
+|   35 | 9876543244 | Ritu Sharma    |
+|   36 | 9876543245 | Pankaj Verma   |
+|   37 | 9876543246 | Alok Singh     |
+|   38 | 9876543247 | Sheetal Jain   |
+|   39 | 9876543248 | Tarun Mehta    |
+|   40 | 9876543249 | Bhavna Kapoor  |
+|   41 | 9876543250 | Gaurav Mishra  |
+|   42 | 9876543251 | Sakshi Arora   |
+|   43 | 9876543252 | Rohit Sharma   |
+|   44 | 9876543253 | Anu Thomas     |
+|   45 | 9876543254 | Karthik Nair   |
+|   46 | 9876543255 | Varun Gupta    |
+|   47 | 9876543256 | Isha Kapoor    |
+|   48 | 9876543257 | Raj Malhotra   |
+|   49 | 9876543258 | Tanya Singh    |
+|   50 | 9876543259 | Nitin Yadav    |
++------+------------+----------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE = 9%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 9%' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE = "9%";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= "9%"' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE = 9;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 9' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE = "9";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= "9"' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE = "9%";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= "9%"' at line 1
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "9%";
++------+------------+----------------+
+| e_id | e_phone_no | e_name         |
++------+------------+----------------+
+|    1 | 9876543210 | Amit Sharma    |
+|    2 | 9876543211 | Priya Reddy    |
+|    3 | 9876543212 | Rahul Verma    |
+|    4 | 9876543213 | Sneha Patil    |
+|    5 | 9876543214 | Arjun Kumar    |
+|    6 | 9876543215 | Neha Gupta     |
+|    7 | 9876543216 | Vikram Singh   |
+|    8 | 9876543217 | Pooja Nair     |
+|    9 | 9876543218 | Ravi Teja      |
+|   10 | 9876543219 | Anjali Das     |
+|   11 | 9876543220 | Kiran Rao      |
+|   12 | 9876543221 | Meena Iyer     |
+|   13 | 9876543222 | Suresh Babu    |
+|   14 | 9876543223 | Divya Menon    |
+|   15 | 9876543224 | Manoj Yadav    |
+|   16 | 9876543225 | Kavita Joshi   |
+|   17 | 9876543226 | Ramesh Gupta   |
+|   18 | 9876543227 | Shalini Kapoor |
+|   19 | 9876543228 | Deepak Jain    |
+|   20 | 9876543229 | Swati Mishra   |
+|   21 | 9876543230 | Ajay Singh     |
+|   22 | 9876543231 | Nisha Arora    |
+|   23 | 9876543232 | Harish Patel   |
+|   24 | 9876543233 | Komal Shah     |
+|   25 | 9876543234 | Sunil Kumar    |
+|   26 | 9876543235 | Rekha Nair     |
+|   27 | 9876543236 | Ankit Agarwal  |
+|   28 | 9876543237 | Preeti Saxena  |
+|   29 | 9876543238 | Mohit Bansal   |
+|   30 | 9876543239 | Geeta Pillai   |
+|   31 | 9876543240 | Ashok Reddy    |
+|   32 | 9876543241 | Lakshmi Devi   |
+|   33 | 9876543242 | Naveen Kumar   |
+|   34 | 9876543243 | Sanjay Gupta   |
+|   35 | 9876543244 | Ritu Sharma    |
+|   36 | 9876543245 | Pankaj Verma   |
+|   37 | 9876543246 | Alok Singh     |
+|   38 | 9876543247 | Sheetal Jain   |
+|   39 | 9876543248 | Tarun Mehta    |
+|   40 | 9876543249 | Bhavna Kapoor  |
+|   41 | 9876543250 | Gaurav Mishra  |
+|   42 | 9876543251 | Sakshi Arora   |
+|   43 | 9876543252 | Rohit Sharma   |
+|   44 | 9876543253 | Anu Thomas     |
+|   45 | 9876543254 | Karthik Nair   |
+|   46 | 9876543255 | Varun Gupta    |
+|   47 | 9876543256 | Isha Kapoor    |
+|   48 | 9876543257 | Raj Malhotra   |
+|   49 | 9876543258 | Tanya Singh    |
+|   50 | 9876543259 | Nitin Yadav    |
++------+------------+----------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%123%";
+Empty set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%12%";
++------+------------+-------------+
+| e_id | e_phone_no | e_name      |
++------+------------+-------------+
+|    3 | 9876543212 | Rahul Verma |
++------+------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%91%";
+Empty set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%84%";
+Empty set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%8%";
++------+------------+----------------+
+| e_id | e_phone_no | e_name         |
++------+------------+----------------+
+|    1 | 9876543210 | Amit Sharma    |
+|    2 | 9876543211 | Priya Reddy    |
+|    3 | 9876543212 | Rahul Verma    |
+|    4 | 9876543213 | Sneha Patil    |
+|    5 | 9876543214 | Arjun Kumar    |
+|    6 | 9876543215 | Neha Gupta     |
+|    7 | 9876543216 | Vikram Singh   |
+|    8 | 9876543217 | Pooja Nair     |
+|    9 | 9876543218 | Ravi Teja      |
+|   10 | 9876543219 | Anjali Das     |
+|   11 | 9876543220 | Kiran Rao      |
+|   12 | 9876543221 | Meena Iyer     |
+|   13 | 9876543222 | Suresh Babu    |
+|   14 | 9876543223 | Divya Menon    |
+|   15 | 9876543224 | Manoj Yadav    |
+|   16 | 9876543225 | Kavita Joshi   |
+|   17 | 9876543226 | Ramesh Gupta   |
+|   18 | 9876543227 | Shalini Kapoor |
+|   19 | 9876543228 | Deepak Jain    |
+|   20 | 9876543229 | Swati Mishra   |
+|   21 | 9876543230 | Ajay Singh     |
+|   22 | 9876543231 | Nisha Arora    |
+|   23 | 9876543232 | Harish Patel   |
+|   24 | 9876543233 | Komal Shah     |
+|   25 | 9876543234 | Sunil Kumar    |
+|   26 | 9876543235 | Rekha Nair     |
+|   27 | 9876543236 | Ankit Agarwal  |
+|   28 | 9876543237 | Preeti Saxena  |
+|   29 | 9876543238 | Mohit Bansal   |
+|   30 | 9876543239 | Geeta Pillai   |
+|   31 | 9876543240 | Ashok Reddy    |
+|   32 | 9876543241 | Lakshmi Devi   |
+|   33 | 9876543242 | Naveen Kumar   |
+|   34 | 9876543243 | Sanjay Gupta   |
+|   35 | 9876543244 | Ritu Sharma    |
+|   36 | 9876543245 | Pankaj Verma   |
+|   37 | 9876543246 | Alok Singh     |
+|   38 | 9876543247 | Sheetal Jain   |
+|   39 | 9876543248 | Tarun Mehta    |
+|   40 | 9876543249 | Bhavna Kapoor  |
+|   41 | 9876543250 | Gaurav Mishra  |
+|   42 | 9876543251 | Sakshi Arora   |
+|   43 | 9876543252 | Rohit Sharma   |
+|   44 | 9876543253 | Anu Thomas     |
+|   45 | 9876543254 | Karthik Nair   |
+|   46 | 9876543255 | Varun Gupta    |
+|   47 | 9876543256 | Isha Kapoor    |
+|   48 | 9876543257 | Raj Malhotra   |
+|   49 | 9876543258 | Tanya Singh    |
+|   50 | 9876543259 | Nitin Yadav    |
++------+------------+----------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%123456789%";
+Empty set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%987654321%";
++------+------------+--------------+
+| e_id | e_phone_no | e_name       |
++------+------------+--------------+
+|    1 | 9876543210 | Amit Sharma  |
+|    2 | 9876543211 | Priya Reddy  |
+|    3 | 9876543212 | Rahul Verma  |
+|    4 | 9876543213 | Sneha Patil  |
+|    5 | 9876543214 | Arjun Kumar  |
+|    6 | 9876543215 | Neha Gupta   |
+|    7 | 9876543216 | Vikram Singh |
+|    8 | 9876543217 | Pooja Nair   |
+|    9 | 9876543218 | Ravi Teja    |
+|   10 | 9876543219 | Anjali Das   |
++------+------------+--------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%987654322%";
++------+------------+----------------+
+| e_id | e_phone_no | e_name         |
++------+------------+----------------+
+|   11 | 9876543220 | Kiran Rao      |
+|   12 | 9876543221 | Meena Iyer     |
+|   13 | 9876543222 | Suresh Babu    |
+|   14 | 9876543223 | Divya Menon    |
+|   15 | 9876543224 | Manoj Yadav    |
+|   16 | 9876543225 | Kavita Joshi   |
+|   17 | 9876543226 | Ramesh Gupta   |
+|   18 | 9876543227 | Shalini Kapoor |
+|   19 | 9876543228 | Deepak Jain    |
+|   20 | 9876543229 | Swati Mishra   |
++------+------------+----------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT e_id , e_phone_no , e_name FROM employees WHERE e_phone_no LIKE "%4%";
++------+------------+----------------+
+| e_id | e_phone_no | e_name         |
++------+------------+----------------+
+|    1 | 9876543210 | Amit Sharma    |
+|    2 | 9876543211 | Priya Reddy    |
+|    3 | 9876543212 | Rahul Verma    |
+|    4 | 9876543213 | Sneha Patil    |
+|    5 | 9876543214 | Arjun Kumar    |
+|    6 | 9876543215 | Neha Gupta     |
+|    7 | 9876543216 | Vikram Singh   |
+|    8 | 9876543217 | Pooja Nair     |
+|    9 | 9876543218 | Ravi Teja      |
+|   10 | 9876543219 | Anjali Das     |
+|   11 | 9876543220 | Kiran Rao      |
+|   12 | 9876543221 | Meena Iyer     |
+|   13 | 9876543222 | Suresh Babu    |
+|   14 | 9876543223 | Divya Menon    |
+|   15 | 9876543224 | Manoj Yadav    |
+|   16 | 9876543225 | Kavita Joshi   |
+|   17 | 9876543226 | Ramesh Gupta   |
+|   18 | 9876543227 | Shalini Kapoor |
+|   19 | 9876543228 | Deepak Jain    |
+|   20 | 9876543229 | Swati Mishra   |
+|   21 | 9876543230 | Ajay Singh     |
+|   22 | 9876543231 | Nisha Arora    |
+|   23 | 9876543232 | Harish Patel   |
+|   24 | 9876543233 | Komal Shah     |
+|   25 | 9876543234 | Sunil Kumar    |
+|   26 | 9876543235 | Rekha Nair     |
+|   27 | 9876543236 | Ankit Agarwal  |
+|   28 | 9876543237 | Preeti Saxena  |
+|   29 | 9876543238 | Mohit Bansal   |
+|   30 | 9876543239 | Geeta Pillai   |
+|   31 | 9876543240 | Ashok Reddy    |
+|   32 | 9876543241 | Lakshmi Devi   |
+|   33 | 9876543242 | Naveen Kumar   |
+|   34 | 9876543243 | Sanjay Gupta   |
+|   35 | 9876543244 | Ritu Sharma    |
+|   36 | 9876543245 | Pankaj Verma   |
+|   37 | 9876543246 | Alok Singh     |
+|   38 | 9876543247 | Sheetal Jain   |
+|   39 | 9876543248 | Tarun Mehta    |
+|   40 | 9876543249 | Bhavna Kapoor  |
+|   41 | 9876543250 | Gaurav Mishra  |
+|   42 | 9876543251 | Sakshi Arora   |
+|   43 | 9876543252 | Rohit Sharma   |
+|   44 | 9876543253 | Anu Thomas     |
+|   45 | 9876543254 | Karthik Nair   |
+|   46 | 9876543255 | Varun Gupta    |
+|   47 | 9876543256 | Isha Kapoor    |
+|   48 | 9876543257 | Raj Malhotra   |
+|   49 | 9876543258 | Tanya Singh    |
+|   50 | 9876543259 | Nitin Yadav    |
++------+------------+----------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "          ";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "I%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|   47 | Isha Kapoor | isha.kapoor@gmail.com | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____G%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__G%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__J%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    5 | Arjun Kumar  | arjun.kumar@gmail.com  | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das   | anjali.das@gmail.com   | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   48 | Raj Malhotra | raj.malhotra@gmail.com | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%J__";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%A__";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    8 | Pooja Nair   | pooja.nair@gmail.com   | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   13 | Suresh Babu  | suresh.babu@gmail.com  | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   19 | Deepak Jain  | deepak.jain@gmail.com  | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   26 | Rekha Nair   | rekha.nair@gmail.com   | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   38 | Sheetal Jain | sheetal.jain@gmail.com | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   45 | Karthik Nair | karthik.nair@gmail.com | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%__A__%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+38 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "%E_";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|   12 | Meena Iyer   | meena.iyer@gmail.com   | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   23 | Harish Patel | harish.patel@gmail.com | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____________";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    7 | Vikram Singh | vikram.singh@gmail.com | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|   16 | Kavita Joshi | kavita.joshi@gmail.com | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta | ramesh.gupta@gmail.com | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   20 | Swati Mishra | swati.mishra@gmail.com | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   23 | Harish Patel | harish.patel@gmail.com | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   29 | Mohit Bansal | mohit.bansal@gmail.com | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai | geeta.pillai@gmail.com | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   32 | Lakshmi Devi | lakshmi.devi@gmail.com | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar | naveen.kumar@gmail.com | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta | sanjay.gupta@gmail.com | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   36 | Pankaj Verma | pankaj.verma@gmail.com | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   38 | Sheetal Jain | sheetal.jain@gmail.com | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   42 | Sakshi Arora | sakshi.arora@gmail.com | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma | rohit.sharma@gmail.com | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   45 | Karthik Nair | karthik.nair@gmail.com | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   48 | Raj Malhotra | raj.malhotra@gmail.com | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________";
++------+------------+----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name     | e_email              | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+|    6 | Neha Gupta | neha.gupta@gmail.com | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    8 | Pooja Nair | pooja.nair@gmail.com | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das | anjali.das@gmail.com | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer | meena.iyer@gmail.com | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   21 | Ajay Singh | ajay.singh@gmail.com | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   24 | Komal Shah | komal.shah@gmail.com | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   26 | Rekha Nair | rekha.nair@gmail.com | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   37 | Alok Singh | alok.singh@gmail.com | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas | anu.thomas@gmail.com | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+48 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________";
++------+------------+----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name     | e_email              | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+|    6 | Neha Gupta | neha.gupta@gmail.com | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    8 | Pooja Nair | pooja.nair@gmail.com | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das | anjali.das@gmail.com | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer | meena.iyer@gmail.com | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   21 | Ajay Singh | ajay.singh@gmail.com | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   24 | Komal Shah | komal.shah@gmail.com | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   26 | Rekha Nair | rekha.nair@gmail.com | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   37 | Alok Singh | alok.singh@gmail.com | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas | anu.thomas@gmail.com | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_________%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+48 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_____";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_______";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________";
++------+------------+----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name     | e_email              | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+|    6 | Neha Gupta | neha.gupta@gmail.com | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    8 | Pooja Nair | pooja.nair@gmail.com | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das | anjali.das@gmail.com | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer | meena.iyer@gmail.com | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   21 | Ajay Singh | ajay.singh@gmail.com | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   24 | Komal Shah | komal.shah@gmail.com | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   26 | Rekha Nair | rekha.nair@gmail.com | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   37 | Alok Singh | alok.singh@gmail.com | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas | anu.thomas@gmail.com | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+------------+----------------------+------------+------------+----------+----------------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+48 rows in set (0.00 sec)
+
+mysql> G
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'G' at line 1
+mysql> SELECT * FROM employees WHERE e_name LIKE "__________%R";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____R______%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "R________%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    3 | Rahul Verma  | rahul.verma@gmail.com  | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    9 | Ravi Teja    | ravi.teja@gmail.com    | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   17 | Ramesh Gupta | ramesh.gupta@gmail.com | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   26 | Rekha Nair   | rekha.nair@gmail.com   | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   35 | Ritu Sharma  | ritu.sharma@gmail.com  | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   43 | Rohit Sharma | rohit.sharma@gmail.com | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   48 | Raj Malhotra | raj.malhotra@gmail.com | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____R____%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_i____%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    7 | Vikram Singh | vikram.singh@gmail.com | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|   11 | Kiran Rao    | kiran.rao@gmail.com    | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   14 | Divya Menon  | divya.menon@gmail.com  | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   22 | Nisha Arora  | nisha.arora@gmail.com  | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   35 | Ritu Sharma  | ritu.sharma@gmail.com  | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   50 | Nitin Yadav  | nitin.yadav@gmail.com  | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "_i%";
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name       | e_email                | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+|    7 | Vikram Singh | vikram.singh@gmail.com | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|   11 | Kiran Rao    | kiran.rao@gmail.com    | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   14 | Divya Menon  | divya.menon@gmail.com  | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   22 | Nisha Arora  | nisha.arora@gmail.com  | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   35 | Ritu Sharma  | ritu.sharma@gmail.com  | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   50 | Nitin Yadav  | nitin.yadav@gmail.com  | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+--------------+------------------------+------------+------------+----------+----------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__i%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__i_______________________________%";
+Empty set (0.01 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I_______________%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I________%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I_________%";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I________%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "__I________";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy | priya.reddy@gmail.com | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "___T_______";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____ ______";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|   35 | Ritu Sharma | ritu.sharma@gmail.com | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   47 | Isha Kapoor | isha.kapoor@gmail.com | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____ ______%";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|   35 | Ritu Sharma | ritu.sharma@gmail.com | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   47 | Isha Kapoor | isha.kapoor@gmail.com | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "____ __";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma   | amit.sharma@gmail.com   | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar   | arjun.kumar@gmail.com   | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das    | anjali.das@gmail.com    | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   21 | Ajay Singh    | ajay.singh@gmail.com    | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   27 | Ankit Agarwal | ankit.agarwal@gmail.com | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   31 | Ashok Reddy   | ashok.reddy@gmail.com   | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   37 | Alok Singh    | alok.singh@gmail.com    | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas    | anu.thomas@gmail.com    | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A_";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma   | amit.sharma@gmail.com   | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar   | arjun.kumar@gmail.com   | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das    | anjali.das@gmail.com    | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   21 | Ajay Singh    | ajay.singh@gmail.com    | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   27 | Ankit Agarwal | ankit.agarwal@gmail.com | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   31 | Ashok Reddy   | ashok.reddy@gmail.com   | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   37 | Alok Singh    | alok.singh@gmail.com    | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas    | anu.thomas@gmail.com    | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A__________";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar | arjun.kumar@gmail.com | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   31 | Ashok Reddy | ashok.reddy@gmail.com | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma   | amit.sharma@gmail.com   | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar   | arjun.kumar@gmail.com   | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das    | anjali.das@gmail.com    | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   21 | Ajay Singh    | ajay.singh@gmail.com    | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   27 | Ankit Agarwal | ankit.agarwal@gmail.com | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   31 | Ashok Reddy   | ashok.reddy@gmail.com   | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   37 | Alok Singh    | alok.singh@gmail.com    | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas    | anu.thomas@gmail.com    | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma    | amit.sharma@gmail.com    | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    5 | Arjun Kumar    | arjun.kumar@gmail.com    | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   31 | Ashok Reddy    | ashok.reddy@gmail.com    | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+50 rows in set (0.01 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A%";
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name        | e_email                 | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma   | amit.sharma@gmail.com   | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar   | arjun.kumar@gmail.com   | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   10 | Anjali Das    | anjali.das@gmail.com    | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   21 | Ajay Singh    | ajay.singh@gmail.com    | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   27 | Ankit Agarwal | ankit.agarwal@gmail.com | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   31 | Ashok Reddy   | ashok.reddy@gmail.com   | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
+|   37 | Alok Singh    | alok.singh@gmail.com    | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   44 | Anu Thomas    | anu.thomas@gmail.com    | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
++------+---------------+-------------------------+------------+------------+----------+----------------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name NOT LIKE "A%";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+42 rows in set (0.04 sec)
+
+mysql> SELECT * FROM employees WHERE e_name LIKE "A__________";
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+| e_id | e_name      | e_email               | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+|    1 | Amit Sharma | amit.sharma@gmail.com | 9876543210 | 2020-01-15 | 50000.00 |          10.50 |  101 |
+|    5 | Arjun Kumar | arjun.kumar@gmail.com | 9876543214 | 2022-02-18 | 40000.00 |           4.50 |  101 |
+|   31 | Ashok Reddy | ashok.reddy@gmail.com | 9876543240 | 2018-03-16 | 69000.00 |          10.50 |  103 |
++------+-------------+-----------------------+------------+------------+----------+----------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees WHERE e_name NOT LIKE "A__________";
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+| e_id | e_name         | e_email                  | e_phone_no | hire_date  | salary   | commission_pct | d_id |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+|    2 | Priya Reddy    | priya.reddy@gmail.com    | 9876543211 | 2019-03-10 | 60000.00 |           8.00 |  102 |
+|    3 | Rahul Verma    | rahul.verma@gmail.com    | 9876543212 | 2021-07-21 | 45000.00 |           5.50 |  103 |
+|    4 | Sneha Patil    | sneha.patil@gmail.com    | 9876543213 | 2018-11-05 | 70000.00 |          12.00 |  104 |
+|    6 | Neha Gupta     | neha.gupta@gmail.com     | 9876543215 | 2020-06-25 | 55000.00 |           7.00 |  102 |
+|    7 | Vikram Singh   | vikram.singh@gmail.com   | 9876543216 | 2017-09-30 | 80000.00 |          15.00 |  103 |
+|    8 | Pooja Nair     | pooja.nair@gmail.com     | 9876543217 | 2021-12-12 | 48000.00 |           6.00 |  104 |
+|    9 | Ravi Teja      | ravi.teja@gmail.com      | 9876543218 | 2019-05-14 | 62000.00 |           9.50 |  101 |
+|   10 | Anjali Das     | anjali.das@gmail.com     | 9876543219 | 2020-08-19 | 53000.00 |           7.50 |  102 |
+|   11 | Kiran Rao      | kiran.rao@gmail.com      | 9876543220 | 2018-01-11 | 72000.00 |          11.00 |  103 |
+|   12 | Meena Iyer     | meena.iyer@gmail.com     | 9876543221 | 2022-04-03 | 39000.00 |           3.50 |  104 |
+|   13 | Suresh Babu    | suresh.babu@gmail.com    | 9876543222 | 2017-10-20 | 85000.00 |          14.00 |  101 |
+|   14 | Divya Menon    | divya.menon@gmail.com    | 9876543223 | 2021-06-15 | 47000.00 |           5.00 |  102 |
+|   15 | Manoj Yadav    | manoj.yadav@gmail.com    | 9876543224 | 2019-09-09 | 61000.00 |           8.50 |  103 |
+|   16 | Kavita Joshi   | kavita.joshi@gmail.com   | 9876543225 | 2020-03-22 | 54000.00 |           7.00 |  104 |
+|   17 | Ramesh Gupta   | ramesh.gupta@gmail.com   | 9876543226 | 2016-12-01 | 90000.00 |          16.00 |  101 |
+|   18 | Shalini Kapoor | shalini.kapoor@gmail.com | 9876543227 | 2022-07-30 | 42000.00 |           4.00 |  102 |
+|   19 | Deepak Jain    | deepak.jain@gmail.com    | 9876543228 | 2018-05-17 | 68000.00 |          10.00 |  103 |
+|   20 | Swati Mishra   | swati.mishra@gmail.com   | 9876543229 | 2021-11-08 | 46000.00 |           5.50 |  104 |
+|   21 | Ajay Singh     | ajay.singh@gmail.com     | 9876543230 | 2017-04-25 | 77000.00 |          13.00 |  101 |
+|   22 | Nisha Arora    | nisha.arora@gmail.com    | 9876543231 | 2019-02-14 | 59000.00 |           8.00 |  102 |
+|   23 | Harish Patel   | harish.patel@gmail.com   | 9876543232 | 2020-10-10 | 52000.00 |           6.50 |  103 |
+|   24 | Komal Shah     | komal.shah@gmail.com     | 9876543233 | 2021-03-05 | 48000.00 |           5.00 |  104 |
+|   25 | Sunil Kumar    | sunil.kumar@gmail.com    | 9876543234 | 2018-08-18 | 66000.00 |           9.00 |  101 |
+|   26 | Rekha Nair     | rekha.nair@gmail.com     | 9876543235 | 2016-11-22 | 88000.00 |          15.50 |  102 |
+|   27 | Ankit Agarwal  | ankit.agarwal@gmail.com  | 9876543236 | 2022-01-09 | 41000.00 |           4.00 |  103 |
+|   28 | Preeti Saxena  | preeti.saxena@gmail.com  | 9876543237 | 2019-07-27 | 60000.00 |           8.50 |  104 |
+|   29 | Mohit Bansal   | mohit.bansal@gmail.com   | 9876543238 | 2020-12-13 | 53000.00 |           7.00 |  101 |
+|   30 | Geeta Pillai   | geeta.pillai@gmail.com   | 9876543239 | 2017-06-29 | 75000.00 |          12.50 |  102 |
+|   32 | Lakshmi Devi   | lakshmi.devi@gmail.com   | 9876543241 | 2021-09-21 | 47000.00 |           5.00 |  104 |
+|   33 | Naveen Kumar   | naveen.kumar@gmail.com   | 9876543242 | 2019-01-30 | 61000.00 |           8.00 |  101 |
+|   34 | Sanjay Gupta   | sanjay.gupta@gmail.com   | 9876543243 | 2020-05-12 | 55000.00 |           7.50 |  102 |
+|   35 | Ritu Sharma    | ritu.sharma@gmail.com    | 9876543244 | 2022-06-06 | 43000.00 |           4.50 |  103 |
+|   36 | Pankaj Verma   | pankaj.verma@gmail.com   | 9876543245 | 2017-02-19 | 78000.00 |          13.50 |  104 |
+|   37 | Alok Singh     | alok.singh@gmail.com     | 9876543246 | 2018-10-23 | 67000.00 |           9.50 |  101 |
+|   38 | Sheetal Jain   | sheetal.jain@gmail.com   | 9876543247 | 2021-04-11 | 49000.00 |           5.50 |  102 |
+|   39 | Tarun Mehta    | tarun.mehta@gmail.com    | 9876543248 | 2019-12-07 | 62000.00 |           8.00 |  103 |
+|   40 | Bhavna Kapoor  | bhavna.kapoor@gmail.com  | 9876543249 | 2020-07-14 | 54000.00 |           7.00 |  104 |
+|   41 | Gaurav Mishra  | gaurav.mishra@gmail.com  | 9876543250 | 2016-09-01 | 92000.00 |          16.50 |  101 |
+|   42 | Sakshi Arora   | sakshi.arora@gmail.com   | 9876543251 | 2022-03-17 | 41000.00 |           4.00 |  102 |
+|   43 | Rohit Sharma   | rohit.sharma@gmail.com   | 9876543252 | 2018-06-28 | 70000.00 |          11.00 |  103 |
+|   44 | Anu Thomas     | anu.thomas@gmail.com     | 9876543253 | 2021-08-09 | 46000.00 |           5.00 |  104 |
+|   45 | Karthik Nair   | karthik.nair@gmail.com   | 9876543254 | 2019-04-04 | 63000.00 |           9.00 |  101 |
+|   46 | Varun Gupta    | varun.gupta@gmail.com    | 9876543255 | 2020-11-19 | 52000.00 |           6.50 |  102 |
+|   47 | Isha Kapoor    | isha.kapoor@gmail.com    | 9876543256 | 2022-05-25 | 44000.00 |           4.50 |  103 |
+|   48 | Raj Malhotra   | raj.malhotra@gmail.com   | 9876543257 | 2017-01-08 | 81000.00 |          14.50 |  104 |
+|   49 | Tanya Singh    | tanya.singh@gmail.com    | 9876543258 | 2018-02-20 | 68000.00 |          10.00 |  101 |
+|   50 | Nitin Yadav    | nitin.yadav@gmail.com    | 9876543259 | 2021-10-31 | 47000.00 |           5.50 |  102 |
++------+----------------+--------------------------+------------+------------+----------+----------------+------+
+47 rows in set (0.00 sec)

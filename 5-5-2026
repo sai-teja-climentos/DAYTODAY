@@ -1,0 +1,538 @@
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\TECHVITY>mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SELECT date_add("2025-12-31,23:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2025-12-31,23:59:59", interval 1 second) |
++----------------------------------------------------+
+| 2026-01-01 00:00:00                                |
++----------------------------------------------------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql> SELECT date_add("2026-05-31,23:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2026-05-31,23:59:59", interval 1 second) |
++----------------------------------------------------+
+| 2026-06-01 00:00:00                                |
++----------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT date_add("2026-04-31,22:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2026-04-31,22:59:59", interval 1 second) |
++----------------------------------------------------+
+| NULL                                               |
++----------------------------------------------------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql> SELECT date_add("2026-04-31,23:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2026-04-31,23:59:59", interval 1 second) |
++----------------------------------------------------+
+| NULL                                               |
++----------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT date_add("2026-04-29,22:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2026-04-29,22:59:59", interval 1 second) |
++----------------------------------------------------+
+| 2026-04-29 23:00:00                                |
++----------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT date_add("2026-04-29,22:59:59", interval 1 second);
++----------------------------------------------------+
+| date_add("2026-04-29,22:59:59", interval 1 second) |
++----------------------------------------------------+
+| 2026-04-29 23:00:00                                |
++----------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT LAST_DAY("2026-12-01");
++------------------------+
+| LAST_DAY("2026-12-01") |
++------------------------+
+| 2026-12-31             |
++------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT LAST_DAY("2026-10-01");
++------------------------+
+| LAST_DAY("2026-10-01") |
++------------------------+
+| 2026-10-31             |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LAST_DAY("2026-04-01");
++------------------------+
+| LAST_DAY("2026-04-01") |
++------------------------+
+| 2026-04-30             |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LAST_DAY("2026-04-01");
++------------------------+
+| LAST_DAY("2026-04-01") |
++------------------------+
+| 2026-04-30             |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> TIMESTAMPDIFF("1997-12-01","2026-05-05");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TIMESTAMPDIFF("1997-12-01","2026-05-05")' at line 1
+mysql> TIMESTAMPDIFF(DAY,"1997-12-01","2026-05-05");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TIMESTAMPDIFF(DAY,"1997-12-01","2026-05-05")' at line 1
+mysql> SELECT TIMESTAMPDIFF(DAY,"1997-12-01","2026-05-05");
++----------------------------------------------+
+| TIMESTAMPDIFF(DAY,"1997-12-01","2026-05-05") |
++----------------------------------------------+
+|                                        10382 |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(HOUR,"2026-05-04","2026-05-05");
++-----------------------------------------------+
+| TIMESTAMPDIFF(HOUR,"2026-05-04","2026-05-05") |
++-----------------------------------------------+
+|                                            24 |
++-----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(DAY,"2026-05-04","2026-05-05");
++----------------------------------------------+
+| TIMESTAMPDIFF(DAY,"2026-05-04","2026-05-05") |
++----------------------------------------------+
+|                                            1 |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(MINUTE ,"2026-05-04","2026-05-05");
++--------------------------------------------------+
+| TIMESTAMPDIFF(MINUTE ,"2026-05-04","2026-05-05") |
++--------------------------------------------------+
+|                                             1440 |
++--------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(MONTH,"2025-05-05","2026-05-05");
++------------------------------------------------+
+| TIMESTAMPDIFF(MONTH,"2025-05-05","2026-05-05") |
++------------------------------------------------+
+|                                             12 |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(MONTH,"1997-05-05","2026-05-05");
++------------------------------------------------+
+| TIMESTAMPDIFF(MONTH,"1997-05-05","2026-05-05") |
++------------------------------------------------+
+|                                            348 |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(YEAR,"1997-05-05","2026-05-05");
++-----------------------------------------------+
+| TIMESTAMPDIFF(YEAR,"1997-05-05","2026-05-05") |
++-----------------------------------------------+
+|                                            29 |
++-----------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT EXTRACT(SECOND FROM "1997-05-05 12:40:37" );
++---------------------------------------------+
+| EXTRACT(SECOND FROM "1997-05-05 12:40:37" ) |
++---------------------------------------------+
+|                                          37 |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXTRACT(MINUTE FROM "1997-05-05 12:40:37" );
++---------------------------------------------+
+| EXTRACT(MINUTE FROM "1997-05-05 12:40:37" ) |
++---------------------------------------------+
+|                                          40 |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXTRACT(HOUR FROM "1997-05-05 12:40:37" );
++-------------------------------------------+
+| EXTRACT(HOUR FROM "1997-05-05 12:40:37" ) |
++-------------------------------------------+
+|                                        12 |
++-------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXTRACT(DAY FROM "1997-05-05 12:40:37" );
++------------------------------------------+
+| EXTRACT(DAY FROM "1997-05-05 12:40:37" ) |
++------------------------------------------+
+|                                        5 |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXTRACT(MONTH FROM "1997-05-05 12:40:37" );
++--------------------------------------------+
+| EXTRACT(MONTH FROM "1997-05-05 12:40:37" ) |
++--------------------------------------------+
+|                                          5 |
++--------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXTRACT(YEAR FROM "1997-05-05 12:40:37" );
++-------------------------------------------+
+| EXTRACT(YEAR FROM "1997-05-05 12:40:37" ) |
++-------------------------------------------+
+|                                      1997 |
++-------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05",%W %D %M %Y);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%W %D %M %Y)' at line 1
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %D %M %Y");
++------------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %D %M %Y") |
++------------------------------------------+
+|  Tuesday 5th May 2026                    |
++------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %M %Y");
++---------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %M %Y") |
++---------------------------------------+
+|  Tuesday May 2026                     |
++---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %M ");
++-------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %M ") |
++-------------------------------------+
+|  Tuesday May                        |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %M %Y");
++---------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %M %Y") |
++---------------------------------------+
+|  Tuesday May 2026                     |
++---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %D %M %Y %H");
++---------------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %D %M %Y %H") |
++---------------------------------------------+
+|  Tuesday 5th May 2026 00                    |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_FORMAT("2026-05-05"," %W %D %M %Y %H:%i");
++------------------------------------------------+
+| DATE_FORMAT("2026-05-05"," %W %D %M %Y %H:%i") |
++------------------------------------------------+
+|  Tuesday 5th May 2026 00:00                    |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(NULL);
++--------------+
+| ISNULL(NULL) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.04 sec)
+
+mysql> SELECT ISNULL(1);
++-----------+
+| ISNULL(1) |
++-----------+
+|         0 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> NULL IT WILL RETURN 1, ELSE IT WILL RETURN 0.;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL IT WILL RETURN 1, ELSE IT WILL RETURN 0.' at line 1
+mysql> SELECT ISNULL(0);
++-----------+
+| ISNULL(0) |
++-----------+
+|         0 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(9);
++-----------+
+| ISNULL(9) |
++-----------+
+|         0 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(1);
++-----------+
+| ISNULL(1) |
++-----------+
+|         0 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(NULL);
++--------------+
+| ISNULL(NULL) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(1);
++-----------+
+| ISNULL(1) |
++-----------+
+|         0 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(100);
++-------------+
+| ISNULL(100) |
++-------------+
+|           0 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(100);
++-------------+
+| ISNULL(100) |
++-------------+
+|           0 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(NULL);
++--------------+
+| ISNULL(NULL) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(-1);
++------------+
+| ISNULL(-1) |
++------------+
+|          0 |
++------------+
+1 row in set (0.04 sec)
+
+mysql> SELECT ISNULL(-100);
++--------------+
+| ISNULL(-100) |
++--------------+
+|            0 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ISNULL(+100);
++--------------+
+| ISNULL(+100) |
++--------------+
+|            0 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,1);
++------------------+
+| COALESCE(NULL,1) |
++------------------+
+|                1 |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT COALESCE(2,1);
++---------------+
+| COALESCE(2,1) |
++---------------+
+|             2 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(100,99);
++------------------+
+| COALESCE(100,99) |
++------------------+
+|              100 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(100,99,101);
++----------------------+
+| COALESCE(100,99,101) |
++----------------------+
+|                  100 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(100,101);
++-------------------+
+| COALESCE(100,101) |
++-------------------+
+|               100 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(98,99);
++-----------------+
+| COALESCE(98,99) |
++-----------------+
+|              98 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(99,98);
++-----------------+
+| COALESCE(99,98) |
++-----------------+
+|              99 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,101);
++--------------------+
+| COALESCE(NULL,101) |
++--------------------+
+|                101 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,98);
++-------------------+
+| COALESCE(NULL,98) |
++-------------------+
+|                98 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(01,98);
++-----------------+
+| COALESCE(01,98) |
++-----------------+
+|               1 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(97,98);
++-----------------+
+| COALESCE(97,98) |
++-----------------+
+|              97 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,-98);
++--------------------+
+| COALESCE(NULL,-98) |
++--------------------+
+|                -98 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(-98,98);
++------------------+
+| COALESCE(-98,98) |
++------------------+
+|              -98 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(-98,+98);
++-------------------+
+| COALESCE(-98,+98) |
++-------------------+
+|               -98 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,+98);
++--------------------+
+| COALESCE(NULL,+98) |
++--------------------+
+|                 98 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,98);
++-------------------+
+| COALESCE(NULL,98) |
++-------------------+
+|                98 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(90,NULL);
++-------------------+
+| COALESCE(90,NULL) |
++-------------------+
+|                90 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,NULL);
++---------------------+
+| COALESCE(NULL,NULL) |
++---------------------+
+|                NULL |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COALESCE(NULL,-0);
++-------------------+
+| COALESCE(NULL,-0) |
++-------------------+
+|                 0 |
++-------------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

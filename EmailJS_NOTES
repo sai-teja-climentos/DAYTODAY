@@ -1,0 +1,118 @@
+Step 1: Create Account
+
+Open:
+
+EmailJS Sign Up
+
+Sign up using Gmail
+Login to dashboard
+Step 2: Add Email Service
+
+Open:
+
+EmailJS Email Services
+
+Then:
+
+Click Add New Service
+Select Gmail
+Connect your Gmail account
+Give service name
+
+After creation you will see:
+
+service_xxxxxxx
+
+Example:
+
+service_ab12cd3
+
+This is your:
+
+YOUR_SERVICE_ID
+Step 3: Create Email Template
+
+Open:
+
+EmailJS Templates
+
+Click Create New Template
+Add:
+
+Subject:
+
+Your OTP Code
+
+Message:
+
+Hello,
+
+Your OTP is: {{otp_code}}
+
+Thank You
+
+Save template.
+
+Then you will get:
+
+template_xxxxxx
+
+Example:
+
+template_hj82ks1
+
+This is your:
+
+YOUR_TEMPLATE_ID
+Step 4: Get Public Key
+
+Open:
+
+EmailJS Account Settings
+
+Scroll down.
+
+You will see:
+
+Public Key
+
+Example:
+
+abcdEFGHijk12345
+
+This is your:
+
+YOUR_PUBLIC_KEY
+Final Example
+
+Replace this:
+
+emailjs.init("YOUR_PUBLIC_KEY");
+
+with:
+
+emailjs.init("abcdEFGHijk12345");
+
+Replace:
+
+"YOUR_SERVICE_ID"
+
+with:
+
+"service_ab12cd3"
+
+Replace:
+
+"YOUR_TEMPLATE_ID"
+
+with:
+
+"template_hj82ks1"
+Final Working Example
+emailjs.init("abcdEFGHijk12345");
+
+emailjs.send(
+   "service_ab12cd3",
+   "template_hj82ks1",
+   templateParams
+)

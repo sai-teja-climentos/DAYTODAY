@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email OTP Verification</title>
+
+<style>
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+#otpSection{
+    display:none;
+}
+
+.success{
+    color:green;
+    margin-top:10px;
+}
+
+.error{
+    color:red;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Email OTP Verification</h2>
+
+    <div id="emailSection">
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <button onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <div id="otpSection">
+        <input type="text" id="userOtp" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <p id="message"></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init("YOUR_PUBLIC_KEY");
+
+let generatedOTP = "";
+
+function generateOTP(){
+    return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
+function sendOTP(){
+
+    const email = document.getElementById("email").value;
+
+    if(email === ""){
+        alert("Please enter email");
+        return;
+    }
+
+    generatedOTP = generateOTP();
+
+    const templateParams = {
+        to_email: email,
+        otp_code: generatedOTP
+    };
+
+    emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        templateParams
+    )
+    .then(function(response){
+
+        document.getElementById("otpSection").style.display = "block";
+
+        document.getElementById("message").innerHTML =
+            "OTP sent successfully to " + email;
+
+        document.getElementById("message").className = "success";
+
+    })
+    .catch(function(error){
+
+        document.getElementById("message").innerHTML =
+            "Failed to send OTP";
+
+        document.getElementById("message").className = "error";
+
+    });
+}
+
+function verifyOTP(){
+
+    const userOtp = document.getElementById("userOtp").value;
+
+    if(userOtp === generatedOTP){
+
+        document.getElementById("message").innerHTML =
+            "OTP Verified Successfully";
+
+        document.getElementById("message").className = "success";
+
+        setTimeout(() => {
+
+            window.location.href = "nextpage.html";
+
+        }, 1500);
+
+    }else{
+
+        document.getElementById("message").innerHTML =
+            "Invalid OTP";
+
+        document.getElementById("message").className = "error";
+    }
+}
+
+</script>
+
+</body>
+</html>

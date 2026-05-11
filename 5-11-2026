@@ -1,0 +1,1318 @@
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\TECHVITY>MYSQL -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| comm_6             |
+| company_db         |
+| demo_1             |
+| employye_db        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| s_q_l_1            |
+| sys                |
++--------------------+
+9 rows in set (0.14 sec)
+
+mysql> ^C
+mysql> USE company_db;
+Database changed
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_company_db |
++----------------------+
+| employees            |
++----------------------+
+1 row in set (0.03 sec)
+
+mysql> SELECT * FROM employees;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com   |   12000.00 |      25 |
+|           2 | Emp2     | emp2@gmail.com   |   15000.00 |      30 |
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          11 | Emp11    | emp11@gmail.com  |   14000.00 |      26 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          21 | Emp21    | emp21@gmail.com  |   13000.00 |      24 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          31 | Emp31    | emp31@gmail.com  |   14500.00 |      25 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          41 | Emp41    | emp41@gmail.com  |   13500.00 |      26 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          51 | Emp51    | emp51@gmail.com  |   14200.00 |      24 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          61 | Emp61    | emp61@gmail.com  |   13800.00 |      25 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          71 | Emp71    | emp71@gmail.com  |   14100.00 |      26 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          81 | Emp81    | emp81@gmail.com  |   13900.00 |      24 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          91 | Emp91    | emp91@gmail.com  |   14300.00 |      25 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      34 |
++-------------+----------+------------------+------------+---------+
+100 rows in set (0.04 sec)
+
+mysql> Types of aggregate functions
+    -> count()
+    -> sum()
+    -> min()
+    -> max()
+    -> avg();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Types of aggregate functions
+count()
+sum()
+min()
+max()
+avg()' at line 1
+mysql> SELECT COUNT(*) FROM employees;
++----------+
+| COUNT(*) |
++----------+
+|      100 |
++----------+
+1 row in set (0.04 sec)
+
+mysql> SELECT COUNT(emp_salary) FROM employees;
++-------------------+
+| COUNT(emp_salary) |
++-------------------+
+|               100 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(emp_salary) FROM employees;
++-----------------+
+| SUM(emp_salary) |
++-----------------+
+|      2284600.00 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(emp_salary) FROM employees;
++-----------------+
+| MIN(emp_salary) |
++-----------------+
+|        12000.00 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(emp_salary) FROM employees;
++-----------------+
+| MAX(emp_salary) |
++-----------------+
+|        35900.00 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(emp_salary) FROM employees;
++-----------------+
+| AVG(emp_salary) |
++-----------------+
+|    22846.000000 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> ^C
+mysql> SELECT * FROM employees;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com   |   12000.00 |      25 |
+|           2 | Emp2     | emp2@gmail.com   |   15000.00 |      30 |
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          11 | Emp11    | emp11@gmail.com  |   14000.00 |      26 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          21 | Emp21    | emp21@gmail.com  |   13000.00 |      24 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          31 | Emp31    | emp31@gmail.com  |   14500.00 |      25 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          41 | Emp41    | emp41@gmail.com  |   13500.00 |      26 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          51 | Emp51    | emp51@gmail.com  |   14200.00 |      24 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          61 | Emp61    | emp61@gmail.com  |   13800.00 |      25 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          71 | Emp71    | emp71@gmail.com  |   14100.00 |      26 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          81 | Emp81    | emp81@gmail.com  |   13900.00 |      24 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          91 | Emp91    | emp91@gmail.com  |   14300.00 |      25 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      34 |
++-------------+----------+------------------+------------+---------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT (emp_name," ",emp_email) AS "emp_name AND emp_email"FROM employees;
++-------------------------+
+| emp_name AND emp_email  |
++-------------------------+
+| Emp1 emp1@gmail.com     |
+| Emp2 emp2@gmail.com     |
+| Emp3 emp3@gmail.com     |
+| Emp4 emp4@gmail.com     |
+| Emp5 emp5@gmail.com     |
+| Emp6 emp6@gmail.com     |
+| Emp7 emp7@gmail.com     |
+| Emp8 emp8@gmail.com     |
+| Emp9 emp9@gmail.com     |
+| Emp10 emp10@gmail.com   |
+| Emp11 emp11@gmail.com   |
+| Emp12 emp12@gmail.com   |
+| Emp13 emp13@gmail.com   |
+| Emp14 emp14@gmail.com   |
+| Emp15 emp15@gmail.com   |
+| Emp16 emp16@gmail.com   |
+| Emp17 emp17@gmail.com   |
+| Emp18 emp18@gmail.com   |
+| Emp19 emp19@gmail.com   |
+| Emp20 emp20@gmail.com   |
+| Emp21 emp21@gmail.com   |
+| Emp22 emp22@gmail.com   |
+| Emp23 emp23@gmail.com   |
+| Emp24 emp24@gmail.com   |
+| Emp25 emp25@gmail.com   |
+| Emp26 emp26@gmail.com   |
+| Emp27 emp27@gmail.com   |
+| Emp28 emp28@gmail.com   |
+| Emp29 emp29@gmail.com   |
+| Emp30 emp30@gmail.com   |
+| Emp31 emp31@gmail.com   |
+| Emp32 emp32@gmail.com   |
+| Emp33 emp33@gmail.com   |
+| Emp34 emp34@gmail.com   |
+| Emp35 emp35@gmail.com   |
+| Emp36 emp36@gmail.com   |
+| Emp37 emp37@gmail.com   |
+| Emp38 emp38@gmail.com   |
+| Emp39 emp39@gmail.com   |
+| Emp40 emp40@gmail.com   |
+| Emp41 emp41@gmail.com   |
+| Emp42 emp42@gmail.com   |
+| Emp43 emp43@gmail.com   |
+| Emp44 emp44@gmail.com   |
+| Emp45 emp45@gmail.com   |
+| Emp46 emp46@gmail.com   |
+| Emp47 emp47@gmail.com   |
+| Emp48 emp48@gmail.com   |
+| Emp49 emp49@gmail.com   |
+| Emp50 emp50@gmail.com   |
+| Emp51 emp51@gmail.com   |
+| Emp52 emp52@gmail.com   |
+| Emp53 emp53@gmail.com   |
+| Emp54 emp54@gmail.com   |
+| Emp55 emp55@gmail.com   |
+| Emp56 emp56@gmail.com   |
+| Emp57 emp57@gmail.com   |
+| Emp58 emp58@gmail.com   |
+| Emp59 emp59@gmail.com   |
+| Emp60 emp60@gmail.com   |
+| Emp61 emp61@gmail.com   |
+| Emp62 emp62@gmail.com   |
+| Emp63 emp63@gmail.com   |
+| Emp64 emp64@gmail.com   |
+| Emp65 emp65@gmail.com   |
+| Emp66 emp66@gmail.com   |
+| Emp67 emp67@gmail.com   |
+| Emp68 emp68@gmail.com   |
+| Emp69 emp69@gmail.com   |
+| Emp70 emp70@gmail.com   |
+| Emp71 emp71@gmail.com   |
+| Emp72 emp72@gmail.com   |
+| Emp73 emp73@gmail.com   |
+| Emp74 emp74@gmail.com   |
+| Emp75 emp75@gmail.com   |
+| Emp76 emp76@gmail.com   |
+| Emp77 emp77@gmail.com   |
+| Emp78 emp78@gmail.com   |
+| Emp79 emp79@gmail.com   |
+| Emp80 emp80@gmail.com   |
+| Emp81 emp81@gmail.com   |
+| Emp82 emp82@gmail.com   |
+| Emp83 emp83@gmail.com   |
+| Emp84 emp84@gmail.com   |
+| Emp85 emp85@gmail.com   |
+| Emp86 emp86@gmail.com   |
+| Emp87 emp87@gmail.com   |
+| Emp88 emp88@gmail.com   |
+| Emp89 emp89@gmail.com   |
+| Emp90 emp90@gmail.com   |
+| Emp91 emp91@gmail.com   |
+| Emp92 emp92@gmail.com   |
+| Emp93 emp93@gmail.com   |
+| Emp94 emp94@gmail.com   |
+| Emp95 emp95@gmail.com   |
+| Emp96 emp96@gmail.com   |
+| Emp97 emp97@gmail.com   |
+| Emp98 emp98@gmail.com   |
+| Emp99 emp99@gmail.com   |
+| Emp100 emp100@gmail.com |
++-------------------------+
+100 rows in set (0.04 sec)
+
+mysql> SELECT LENGTH (emp_name) FROM employees;
++-------------------+
+| LENGTH (emp_name) |
++-------------------+
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 4 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 5 |
+|                 6 |
++-------------------+
+100 rows in set (0.01 sec)
+
+mysql> SELECT LENGTH (emp_email) FROM employees;
++--------------------+
+| LENGTH (emp_email) |
++--------------------+
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 14 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 15 |
+|                 16 |
++--------------------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT LENGTH(emp_email) FROM employees WHERE employee_id =3;
++-------------------+
+| LENGTH(emp_email) |
++-------------------+
+|                14 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LENGTH(emp_email) FROM employees WHERE employee_id =100;
++-------------------+
+| LENGTH(emp_email) |
++-------------------+
+|                16 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com   |   12000.00 |      25 |
+|           2 | Emp2     | emp2@gmail.com   |   15000.00 |      30 |
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          11 | Emp11    | emp11@gmail.com  |   14000.00 |      26 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          21 | Emp21    | emp21@gmail.com  |   13000.00 |      24 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          31 | Emp31    | emp31@gmail.com  |   14500.00 |      25 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          41 | Emp41    | emp41@gmail.com  |   13500.00 |      26 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          51 | Emp51    | emp51@gmail.com  |   14200.00 |      24 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          61 | Emp61    | emp61@gmail.com  |   13800.00 |      25 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          71 | Emp71    | emp71@gmail.com  |   14100.00 |      26 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          81 | Emp81    | emp81@gmail.com  |   13900.00 |      24 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          91 | Emp91    | emp91@gmail.com  |   14300.00 |      25 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      34 |
++-------------+----------+------------------+------------+---------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary) FROM employees;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'company_db.employees.employee_id'; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>200000 ORDER BY  employee_id DESC;
+Empty set (0.01 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 ORDER BY employee_id DESC;
++-------------+-----------------+
+| employee_id | MAX(emp_salary) |
++-------------+-----------------+
+|          24 |        20500.00 |
+|          20 |        35500.00 |
+|          19 |        30500.00 |
+|          18 |        27500.00 |
+|          17 |        25500.00 |
+|          16 |        22500.00 |
+|          14 |        21000.00 |
+|          10 |        35000.00 |
+|           9 |        30000.00 |
+|           8 |        27000.00 |
+|           7 |        25000.00 |
+|           6 |        22000.00 |
++-------------+-----------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>200000 ;
+Empty set (0.00 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 ORDER BY employee_id;
++-------------+-----------------+
+| employee_id | MAX(emp_salary) |
++-------------+-----------------+
+|           6 |        22000.00 |
+|           7 |        25000.00 |
+|           8 |        27000.00 |
+|           9 |        30000.00 |
+|          10 |        35000.00 |
+|          14 |        21000.00 |
+|          16 |        22500.00 |
+|          17 |        25500.00 |
+|          18 |        27500.00 |
+|          19 |        30500.00 |
+|          20 |        35500.00 |
+|          24 |        20500.00 |
++-------------+-----------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 ORDER BY employee_id ASC;
++-------------+-----------------+
+| employee_id | MAX(emp_salary) |
++-------------+-----------------+
+|           6 |        22000.00 |
+|           7 |        25000.00 |
+|           8 |        27000.00 |
+|           9 |        30000.00 |
+|          10 |        35000.00 |
+|          14 |        21000.00 |
+|          16 |        22500.00 |
+|          17 |        25500.00 |
+|          18 |        27500.00 |
+|          19 |        30500.00 |
+|          20 |        35500.00 |
+|          24 |        20500.00 |
++-------------+-----------------+
+12 rows in set (0.01 sec)
+
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 employee_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee_id' at line 1
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 employee_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee_id' at line 1
+mysql> SELECT employee_id,MAX(emp_salary)FROM employees WHERE employee_id<=25 GROUP BY employee_id HAVING MAX(emp_salary)>20000 ORDER BY employee_id;
++-------------+-----------------+
+| employee_id | MAX(emp_salary) |
++-------------+-----------------+
+|           6 |        22000.00 |
+|           7 |        25000.00 |
+|           8 |        27000.00 |
+|           9 |        30000.00 |
+|          10 |        35000.00 |
+|          14 |        21000.00 |
+|          16 |        22500.00 |
+|          17 |        25500.00 |
+|          18 |        27500.00 |
+|          19 |        30500.00 |
+|          20 |        35500.00 |
+|          24 |        20500.00 |
++-------------+-----------------+
+12 rows in set (0.00 sec)
+
+mysql> DESC employees;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| employee_id | int           | NO   | PRI | NULL    | auto_increment |
+| emp_name    | varchar(100)  | YES  |     | NULL    |                |
+| emp_email   | varchar(100)  | YES  |     | NULL    |                |
+| emp_salary  | decimal(10,2) | YES  |     | NULL    |                |
+| emp_age     | int           | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+5 rows in set (0.04 sec)
+
+mysql> SELECT * FROM employees;
++-------------+----------+------------------+------------+---------+
+| employee_id | emp_name | emp_email        | emp_salary | emp_age |
++-------------+----------+------------------+------------+---------+
+|           1 | Emp1     | emp1@gmail.com   |   12000.00 |      25 |
+|           2 | Emp2     | emp2@gmail.com   |   15000.00 |      30 |
+|           3 | Emp3     | emp3@gmail.com   |   18000.00 |      28 |
+|           4 | Emp4     | emp4@gmail.com   |   20000.00 |      35 |
+|           5 | Emp5     | emp5@gmail.com   |   17000.00 |      40 |
+|           6 | Emp6     | emp6@gmail.com   |   22000.00 |      45 |
+|           7 | Emp7     | emp7@gmail.com   |   25000.00 |      50 |
+|           8 | Emp8     | emp8@gmail.com   |   27000.00 |      32 |
+|           9 | Emp9     | emp9@gmail.com   |   30000.00 |      29 |
+|          10 | Emp10    | emp10@gmail.com  |   35000.00 |      38 |
+|          11 | Emp11    | emp11@gmail.com  |   14000.00 |      26 |
+|          12 | Emp12    | emp12@gmail.com  |   16000.00 |      31 |
+|          13 | Emp13    | emp13@gmail.com  |   19000.00 |      27 |
+|          14 | Emp14    | emp14@gmail.com  |   21000.00 |      36 |
+|          15 | Emp15    | emp15@gmail.com  |   17500.00 |      41 |
+|          16 | Emp16    | emp16@gmail.com  |   22500.00 |      46 |
+|          17 | Emp17    | emp17@gmail.com  |   25500.00 |      51 |
+|          18 | Emp18    | emp18@gmail.com  |   27500.00 |      33 |
+|          19 | Emp19    | emp19@gmail.com  |   30500.00 |      30 |
+|          20 | Emp20    | emp20@gmail.com  |   35500.00 |      39 |
+|          21 | Emp21    | emp21@gmail.com  |   13000.00 |      24 |
+|          22 | Emp22    | emp22@gmail.com  |   15500.00 |      29 |
+|          23 | Emp23    | emp23@gmail.com  |   18500.00 |      34 |
+|          24 | Emp24    | emp24@gmail.com  |   20500.00 |      37 |
+|          25 | Emp25    | emp25@gmail.com  |   17200.00 |      42 |
+|          26 | Emp26    | emp26@gmail.com  |   22200.00 |      47 |
+|          27 | Emp27    | emp27@gmail.com  |   25200.00 |      52 |
+|          28 | Emp28    | emp28@gmail.com  |   27200.00 |      31 |
+|          29 | Emp29    | emp29@gmail.com  |   30200.00 |      28 |
+|          30 | Emp30    | emp30@gmail.com  |   35200.00 |      36 |
+|          31 | Emp31    | emp31@gmail.com  |   14500.00 |      25 |
+|          32 | Emp32    | emp32@gmail.com  |   16500.00 |      30 |
+|          33 | Emp33    | emp33@gmail.com  |   19500.00 |      33 |
+|          34 | Emp34    | emp34@gmail.com  |   21500.00 |      38 |
+|          35 | Emp35    | emp35@gmail.com  |   17800.00 |      43 |
+|          36 | Emp36    | emp36@gmail.com  |   22800.00 |      48 |
+|          37 | Emp37    | emp37@gmail.com  |   25800.00 |      49 |
+|          38 | Emp38    | emp38@gmail.com  |   27800.00 |      34 |
+|          39 | Emp39    | emp39@gmail.com  |   30800.00 |      27 |
+|          40 | Emp40    | emp40@gmail.com  |   35800.00 |      35 |
+|          41 | Emp41    | emp41@gmail.com  |   13500.00 |      26 |
+|          42 | Emp42    | emp42@gmail.com  |   15800.00 |      31 |
+|          43 | Emp43    | emp43@gmail.com  |   18800.00 |      29 |
+|          44 | Emp44    | emp44@gmail.com  |   20800.00 |      36 |
+|          45 | Emp45    | emp45@gmail.com  |   17400.00 |      44 |
+|          46 | Emp46    | emp46@gmail.com  |   22400.00 |      45 |
+|          47 | Emp47    | emp47@gmail.com  |   25400.00 |      50 |
+|          48 | Emp48    | emp48@gmail.com  |   27400.00 |      32 |
+|          49 | Emp49    | emp49@gmail.com  |   30400.00 |      28 |
+|          50 | Emp50    | emp50@gmail.com  |   35400.00 |      37 |
+|          51 | Emp51    | emp51@gmail.com  |   14200.00 |      24 |
+|          52 | Emp52    | emp52@gmail.com  |   16200.00 |      30 |
+|          53 | Emp53    | emp53@gmail.com  |   19200.00 |      34 |
+|          54 | Emp54    | emp54@gmail.com  |   21200.00 |      39 |
+|          55 | Emp55    | emp55@gmail.com  |   17600.00 |      41 |
+|          56 | Emp56    | emp56@gmail.com  |   22600.00 |      46 |
+|          57 | Emp57    | emp57@gmail.com  |   25600.00 |      51 |
+|          58 | Emp58    | emp58@gmail.com  |   27600.00 |      33 |
+|          59 | Emp59    | emp59@gmail.com  |   30600.00 |      29 |
+|          60 | Emp60    | emp60@gmail.com  |   35600.00 |      38 |
+|          61 | Emp61    | emp61@gmail.com  |   13800.00 |      25 |
+|          62 | Emp62    | emp62@gmail.com  |   16800.00 |      31 |
+|          63 | Emp63    | emp63@gmail.com  |   19800.00 |      35 |
+|          64 | Emp64    | emp64@gmail.com  |   21800.00 |      40 |
+|          65 | Emp65    | emp65@gmail.com  |   17900.00 |      42 |
+|          66 | Emp66    | emp66@gmail.com  |   22900.00 |      47 |
+|          67 | Emp67    | emp67@gmail.com  |   25900.00 |      52 |
+|          68 | Emp68    | emp68@gmail.com  |   27900.00 |      34 |
+|          69 | Emp69    | emp69@gmail.com  |   30900.00 |      27 |
+|          70 | Emp70    | emp70@gmail.com  |   35900.00 |      36 |
+|          71 | Emp71    | emp71@gmail.com  |   14100.00 |      26 |
+|          72 | Emp72    | emp72@gmail.com  |   16100.00 |      30 |
+|          73 | Emp73    | emp73@gmail.com  |   19100.00 |      33 |
+|          74 | Emp74    | emp74@gmail.com  |   21100.00 |      37 |
+|          75 | Emp75    | emp75@gmail.com  |   17300.00 |      43 |
+|          76 | Emp76    | emp76@gmail.com  |   22300.00 |      48 |
+|          77 | Emp77    | emp77@gmail.com  |   25300.00 |      49 |
+|          78 | Emp78    | emp78@gmail.com  |   27300.00 |      32 |
+|          79 | Emp79    | emp79@gmail.com  |   30300.00 |      28 |
+|          80 | Emp80    | emp80@gmail.com  |   35300.00 |      35 |
+|          81 | Emp81    | emp81@gmail.com  |   13900.00 |      24 |
+|          82 | Emp82    | emp82@gmail.com  |   15900.00 |      29 |
+|          83 | Emp83    | emp83@gmail.com  |   18900.00 |      34 |
+|          84 | Emp84    | emp84@gmail.com  |   20900.00 |      38 |
+|          85 | Emp85    | emp85@gmail.com  |   17100.00 |      41 |
+|          86 | Emp86    | emp86@gmail.com  |   22100.00 |      46 |
+|          87 | Emp87    | emp87@gmail.com  |   25100.00 |      50 |
+|          88 | Emp88    | emp88@gmail.com  |   27100.00 |      33 |
+|          89 | Emp89    | emp89@gmail.com  |   30100.00 |      30 |
+|          90 | Emp90    | emp90@gmail.com  |   35100.00 |      39 |
+|          91 | Emp91    | emp91@gmail.com  |   14300.00 |      25 |
+|          92 | Emp92    | emp92@gmail.com  |   16300.00 |      31 |
+|          93 | Emp93    | emp93@gmail.com  |   19300.00 |      36 |
+|          94 | Emp94    | emp94@gmail.com  |   21300.00 |      40 |
+|          95 | Emp95    | emp95@gmail.com  |   17700.00 |      42 |
+|          96 | Emp96    | emp96@gmail.com  |   22700.00 |      47 |
+|          97 | Emp97    | emp97@gmail.com  |   25700.00 |      51 |
+|          98 | Emp98    | emp98@gmail.com  |   27700.00 |      34 |
+|          99 | Emp99    | emp99@gmail.com  |   30700.00 |      28 |
+|         100 | Emp100   | emp100@gmail.com |   35700.00 |      34 |
++-------------+----------+------------------+------------+---------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT MIN(emp_salary),MAX(emp_salary) FROM employees;
++-----------------+-----------------+
+| MIN(emp_salary) | MAX(emp_salary) |
++-----------------+-----------------+
+|        12000.00 |        35900.00 |
++-----------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(emp_salary),MAX(emp_salary) FROM employees GROUP BY employeesemployee_id;
+ERROR 1054 (42S22): Unknown column 'employeesemployee_id' in 'group statement'
+mysql> SELECT MIN(emp_salary),MAX(emp_salary) FROM employees GROUP BY employee_id;
++-----------------+-----------------+
+| MIN(emp_salary) | MAX(emp_salary) |
++-----------------+-----------------+
+|        12000.00 |        12000.00 |
+|        15000.00 |        15000.00 |
+|        18000.00 |        18000.00 |
+|        20000.00 |        20000.00 |
+|        17000.00 |        17000.00 |
+|        22000.00 |        22000.00 |
+|        25000.00 |        25000.00 |
+|        27000.00 |        27000.00 |
+|        30000.00 |        30000.00 |
+|        35000.00 |        35000.00 |
+|        14000.00 |        14000.00 |
+|        16000.00 |        16000.00 |
+|        19000.00 |        19000.00 |
+|        21000.00 |        21000.00 |
+|        17500.00 |        17500.00 |
+|        22500.00 |        22500.00 |
+|        25500.00 |        25500.00 |
+|        27500.00 |        27500.00 |
+|        30500.00 |        30500.00 |
+|        35500.00 |        35500.00 |
+|        13000.00 |        13000.00 |
+|        15500.00 |        15500.00 |
+|        18500.00 |        18500.00 |
+|        20500.00 |        20500.00 |
+|        17200.00 |        17200.00 |
+|        22200.00 |        22200.00 |
+|        25200.00 |        25200.00 |
+|        27200.00 |        27200.00 |
+|        30200.00 |        30200.00 |
+|        35200.00 |        35200.00 |
+|        14500.00 |        14500.00 |
+|        16500.00 |        16500.00 |
+|        19500.00 |        19500.00 |
+|        21500.00 |        21500.00 |
+|        17800.00 |        17800.00 |
+|        22800.00 |        22800.00 |
+|        25800.00 |        25800.00 |
+|        27800.00 |        27800.00 |
+|        30800.00 |        30800.00 |
+|        35800.00 |        35800.00 |
+|        13500.00 |        13500.00 |
+|        15800.00 |        15800.00 |
+|        18800.00 |        18800.00 |
+|        20800.00 |        20800.00 |
+|        17400.00 |        17400.00 |
+|        22400.00 |        22400.00 |
+|        25400.00 |        25400.00 |
+|        27400.00 |        27400.00 |
+|        30400.00 |        30400.00 |
+|        35400.00 |        35400.00 |
+|        14200.00 |        14200.00 |
+|        16200.00 |        16200.00 |
+|        19200.00 |        19200.00 |
+|        21200.00 |        21200.00 |
+|        17600.00 |        17600.00 |
+|        22600.00 |        22600.00 |
+|        25600.00 |        25600.00 |
+|        27600.00 |        27600.00 |
+|        30600.00 |        30600.00 |
+|        35600.00 |        35600.00 |
+|        13800.00 |        13800.00 |
+|        16800.00 |        16800.00 |
+|        19800.00 |        19800.00 |
+|        21800.00 |        21800.00 |
+|        17900.00 |        17900.00 |
+|        22900.00 |        22900.00 |
+|        25900.00 |        25900.00 |
+|        27900.00 |        27900.00 |
+|        30900.00 |        30900.00 |
+|        35900.00 |        35900.00 |
+|        14100.00 |        14100.00 |
+|        16100.00 |        16100.00 |
+|        19100.00 |        19100.00 |
+|        21100.00 |        21100.00 |
+|        17300.00 |        17300.00 |
+|        22300.00 |        22300.00 |
+|        25300.00 |        25300.00 |
+|        27300.00 |        27300.00 |
+|        30300.00 |        30300.00 |
+|        35300.00 |        35300.00 |
+|        13900.00 |        13900.00 |
+|        15900.00 |        15900.00 |
+|        18900.00 |        18900.00 |
+|        20900.00 |        20900.00 |
+|        17100.00 |        17100.00 |
+|        22100.00 |        22100.00 |
+|        25100.00 |        25100.00 |
+|        27100.00 |        27100.00 |
+|        30100.00 |        30100.00 |
+|        35100.00 |        35100.00 |
+|        14300.00 |        14300.00 |
+|        16300.00 |        16300.00 |
+|        19300.00 |        19300.00 |
+|        21300.00 |        21300.00 |
+|        17700.00 |        17700.00 |
+|        22700.00 |        22700.00 |
+|        25700.00 |        25700.00 |
+|        27700.00 |        27700.00 |
+|        30700.00 |        30700.00 |
+|        35700.00 |        35700.00 |
++-----------------+-----------------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT MIN(emp_salary),MAX(emp_salary) FROM employees;
++-----------------+-----------------+
+| MIN(emp_salary) | MAX(emp_salary) |
++-----------------+-----------------+
+|        12000.00 |        35900.00 |
++-----------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(emp_salary),MAX(emp_salary) FROM employees GROUP BY employee_id;
++-----------------+-----------------+
+| MIN(emp_salary) | MAX(emp_salary) |
++-----------------+-----------------+
+|        12000.00 |        12000.00 |
+|        15000.00 |        15000.00 |
+|        18000.00 |        18000.00 |
+|        20000.00 |        20000.00 |
+|        17000.00 |        17000.00 |
+|        22000.00 |        22000.00 |
+|        25000.00 |        25000.00 |
+|        27000.00 |        27000.00 |
+|        30000.00 |        30000.00 |
+|        35000.00 |        35000.00 |
+|        14000.00 |        14000.00 |
+|        16000.00 |        16000.00 |
+|        19000.00 |        19000.00 |
+|        21000.00 |        21000.00 |
+|        17500.00 |        17500.00 |
+|        22500.00 |        22500.00 |
+|        25500.00 |        25500.00 |
+|        27500.00 |        27500.00 |
+|        30500.00 |        30500.00 |
+|        35500.00 |        35500.00 |
+|        13000.00 |        13000.00 |
+|        15500.00 |        15500.00 |
+|        18500.00 |        18500.00 |
+|        20500.00 |        20500.00 |
+|        17200.00 |        17200.00 |
+|        22200.00 |        22200.00 |
+|        25200.00 |        25200.00 |
+|        27200.00 |        27200.00 |
+|        30200.00 |        30200.00 |
+|        35200.00 |        35200.00 |
+|        14500.00 |        14500.00 |
+|        16500.00 |        16500.00 |
+|        19500.00 |        19500.00 |
+|        21500.00 |        21500.00 |
+|        17800.00 |        17800.00 |
+|        22800.00 |        22800.00 |
+|        25800.00 |        25800.00 |
+|        27800.00 |        27800.00 |
+|        30800.00 |        30800.00 |
+|        35800.00 |        35800.00 |
+|        13500.00 |        13500.00 |
+|        15800.00 |        15800.00 |
+|        18800.00 |        18800.00 |
+|        20800.00 |        20800.00 |
+|        17400.00 |        17400.00 |
+|        22400.00 |        22400.00 |
+|        25400.00 |        25400.00 |
+|        27400.00 |        27400.00 |
+|        30400.00 |        30400.00 |
+|        35400.00 |        35400.00 |
+|        14200.00 |        14200.00 |
+|        16200.00 |        16200.00 |
+|        19200.00 |        19200.00 |
+|        21200.00 |        21200.00 |
+|        17600.00 |        17600.00 |
+|        22600.00 |        22600.00 |
+|        25600.00 |        25600.00 |
+|        27600.00 |        27600.00 |
+|        30600.00 |        30600.00 |
+|        35600.00 |        35600.00 |
+|        13800.00 |        13800.00 |
+|        16800.00 |        16800.00 |
+|        19800.00 |        19800.00 |
+|        21800.00 |        21800.00 |
+|        17900.00 |        17900.00 |
+|        22900.00 |        22900.00 |
+|        25900.00 |        25900.00 |
+|        27900.00 |        27900.00 |
+|        30900.00 |        30900.00 |
+|        35900.00 |        35900.00 |
+|        14100.00 |        14100.00 |
+|        16100.00 |        16100.00 |
+|        19100.00 |        19100.00 |
+|        21100.00 |        21100.00 |
+|        17300.00 |        17300.00 |
+|        22300.00 |        22300.00 |
+|        25300.00 |        25300.00 |
+|        27300.00 |        27300.00 |
+|        30300.00 |        30300.00 |
+|        35300.00 |        35300.00 |
+|        13900.00 |        13900.00 |
+|        15900.00 |        15900.00 |
+|        18900.00 |        18900.00 |
+|        20900.00 |        20900.00 |
+|        17100.00 |        17100.00 |
+|        22100.00 |        22100.00 |
+|        25100.00 |        25100.00 |
+|        27100.00 |        27100.00 |
+|        30100.00 |        30100.00 |
+|        35100.00 |        35100.00 |
+|        14300.00 |        14300.00 |
+|        16300.00 |        16300.00 |
+|        19300.00 |        19300.00 |
+|        21300.00 |        21300.00 |
+|        17700.00 |        17700.00 |
+|        22700.00 |        22700.00 |
+|        25700.00 |        25700.00 |
+|        27700.00 |        27700.00 |
+|        30700.00 |        30700.00 |
+|        35700.00 |        35700.00 |
++-----------------+-----------------+
+100 rows in set (0.00 sec)
+
+mysql> SELECT AVG(emp_salary) FROM employees;
++-----------------+
+| AVG(emp_salary) |
++-----------------+
+|    22846.000000 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(emp_salary) FROM employees GROUP BY employee_id;
++-----------------+
+| AVG(emp_salary) |
++-----------------+
+|    12000.000000 |
+|    15000.000000 |
+|    18000.000000 |
+|    20000.000000 |
+|    17000.000000 |
+|    22000.000000 |
+|    25000.000000 |
+|    27000.000000 |
+|    30000.000000 |
+|    35000.000000 |
+|    14000.000000 |
+|    16000.000000 |
+|    19000.000000 |
+|    21000.000000 |
+|    17500.000000 |
+|    22500.000000 |
+|    25500.000000 |
+|    27500.000000 |
+|    30500.000000 |
+|    35500.000000 |
+|    13000.000000 |
+|    15500.000000 |
+|    18500.000000 |
+|    20500.000000 |
+|    17200.000000 |
+|    22200.000000 |
+|    25200.000000 |
+|    27200.000000 |
+|    30200.000000 |
+|    35200.000000 |
+|    14500.000000 |
+|    16500.000000 |
+|    19500.000000 |
+|    21500.000000 |
+|    17800.000000 |
+|    22800.000000 |
+|    25800.000000 |
+|    27800.000000 |
+|    30800.000000 |
+|    35800.000000 |
+|    13500.000000 |
+|    15800.000000 |
+|    18800.000000 |
+|    20800.000000 |
+|    17400.000000 |
+|    22400.000000 |
+|    25400.000000 |
+|    27400.000000 |
+|    30400.000000 |
+|    35400.000000 |
+|    14200.000000 |
+|    16200.000000 |
+|    19200.000000 |
+|    21200.000000 |
+|    17600.000000 |
+|    22600.000000 |
+|    25600.000000 |
+|    27600.000000 |
+|    30600.000000 |
+|    35600.000000 |
+|    13800.000000 |
+|    16800.000000 |
+|    19800.000000 |
+|    21800.000000 |
+|    17900.000000 |
+|    22900.000000 |
+|    25900.000000 |
+|    27900.000000 |
+|    30900.000000 |
+|    35900.000000 |
+|    14100.000000 |
+|    16100.000000 |
+|    19100.000000 |
+|    21100.000000 |
+|    17300.000000 |
+|    22300.000000 |
+|    25300.000000 |
+|    27300.000000 |
+|    30300.000000 |
+|    35300.000000 |
+|    13900.000000 |
+|    15900.000000 |
+|    18900.000000 |
+|    20900.000000 |
+|    17100.000000 |
+|    22100.000000 |
+|    25100.000000 |
+|    27100.000000 |
+|    30100.000000 |
+|    35100.000000 |
+|    14300.000000 |
+|    16300.000000 |
+|    19300.000000 |
+|    21300.000000 |
+|    17700.000000 |
+|    22700.000000 |
+|    25700.000000 |
+|    27700.000000 |
+|    30700.000000 |
+|    35700.000000 |
++-----------------+
+100 rows in set (0.00 sec)
+
+mysql>
